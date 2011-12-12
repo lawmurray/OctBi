@@ -4,24 +4,26 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} image_cor (@var{in}, @var{invars}, @var{coords}, @var{ps}, @var{logs})
+% @deftypefn {Function File} {} image_cor (@var{in}, @var{invars}, @var{coords}, @var{ps}, @var{logs})
 %
 % Plot correlation matrix of samples output by mcmc program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% mcmc.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% mcmc.
 %
-% @bullet{ @var{invars} Cell array giving names of variables to plot.
+% @item @var{invars} Cell array giving names of variables to plot.
 %
-% @bullet{ @var{coords} Cell array giving coordinates of variables to plot,
+% @item @var{coords} Cell array giving coordinates of variables to plot,
 % each element matching an element of @var{invars}.
 %
-% @bullet{ @var{ps} (optional) Vector of indices of samples to
+% @item @var{ps} (optional) Vector of indices of samples to
 % include. Useful for excluding burn-in periods, for instance.
 %
-% @bullet @var{logns} (optional) Vector of true/false values indicating
-% log-variables.  @end itemize @end deftypefn
+% @item @var{logns} (optional) Vector of true/false values indicating
+% log-variables.
+% @end itemize
+% @end deftypefn
 %
 function image_cor_mcmc (in, invars, coords, ps, logns)    
     % check arguments

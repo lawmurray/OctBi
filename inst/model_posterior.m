@@ -9,14 +9,14 @@
 % Construct model for spatial exploration of posterior.
 %
 % @itemize
-% @itemize @bullet{ @var{ins} Input file name, or cell array of file
-% names. Gives the name of NetCDF files output by mcmc.}
+% @item @var{ins} Input file name, or cell array of file
+% names. Gives the name of NetCDF files output by mcmc.
 %
-% @bullet{ @var{invars} Name of variables from input file to include.
+% @item @var{invars} Name of variables from input file to include.
 %
-% @bullet{ @var{coords} Cell array giving vectors of spatial
+% @item @var{coords} Cell array giving vectors of spatial
 % coordinates of zero to three elements, giving the x, y and z coordinates of
-% the corresponding variable in @var{invars} to plot.}
+% the corresponding variable in @var{invars} to plot.
 % @end itemize
 % @end deftypefn
 %

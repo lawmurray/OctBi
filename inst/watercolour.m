@@ -9,7 +9,7 @@
 % Retrieve colour from watercolour palette.
 %
 % @itemize
-% @bullet{ @var{i} Colour index.}
+% @item @var{i} Colour index.
 % @end itemize
 %
 % Returns colour at given index.

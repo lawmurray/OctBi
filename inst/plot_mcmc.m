@@ -4,19 +4,19 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_mcmc (@var{ins}, @var{invar}, @var{coord}, @var{ps}, @var{ts})
+% @deftypefn {Function File} {} plot_mcmc (@var{ins}, @var{invar}, @var{coord}, @var{ps}, @var{ts})
 %
 % Plot output of the mcmc program.
 %
 % @itemize
-% @bullet{ @var{ins} Input file.s Gives the names of NetCDF files output by
-% mcmc.}
+% @item @var{ins} Input file.s Gives the names of NetCDF files output by
+% mcmc.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
+% component of @var{invar} to plot.
 % @end itemize
 % @end deftypefn
 %

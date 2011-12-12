@@ -4,30 +4,30 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} image_bifurc (@var{in}, @var{xvar}, @var{xcoord}, @var{yvar}, @var{ycoords}, @var{rang})
+% @deftypefn {Function File} {} image_bifurc (@var{in}, @var{xvar}, @var{xcoord}, @var{yvar}, @var{ycoords}, @var{rang})
 %
 % Plot bifurcation image using output of simulate program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% simulate.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% simulate.
 %
-% @bullet{ @var{xvar} Name of variable from input file to use along x-axis
+% @item @var{xvar} Name of variable from input file to use along x-axis
 % of plot. Typically this is a parameter of the model.
 %
-% @bullet{ @var{xcoord} Vector of spatial coordinates of zero
+% @item @var{xcoord} Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{xvar} to use.}
+% component of @var{xvar} to use.
 %
-% @bullet{ @var{yvar} Name of variable from input file to use along y-axis
+% @item @var{yvar} Name of variable from input file to use along y-axis
 % of plot. Typically this is a dynamic state variable of the model.
 %
-% @bullet{ @var{xcoords} (optional) Matrix of spatial coordinates of zero
+% @item @var{xcoords} (optional) Matrix of spatial coordinates of zero
 % to three columns, giving the x, y and z coordinates of the components of
 % @var{yvar} to use. These will all be combined in producing the
-% plot.}
+% plot.
 %
-% @bullet{ @var{rang} (optional) Vector of indices of times to
+% @item @var{rang} (optional) Vector of indices of times to
 % include. Useful for excluding burn-in periods, for instance.
 % @end itemize
 % @end deftypefn

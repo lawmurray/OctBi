@@ -4,18 +4,19 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} polar_likelihood (@var{model}, @var{mn}, @var{mx})
+% @deftypefn {Function File} {} polar_likelihood (@var{model}, @var{mn}, @var{mx})
 %
 % Polar plot for likelihood noise.
 %
 % @itemize
-% @bullet{ @var{model} Model, as output by model_likelihood().}
+% @item @var{model} Model, as output by model_likelihood().
 %
-% @bullet{ @var{mn} (optional) Global minima, as output by
-% minmax_likelihood().}
+% @item @var{mn} (optional) Global minima, as output by
+% minmax_likelihood().
 %
-% @bullet{ @var{mx} (optional) Local maxima, as output by
-% minmax_likelihood().}
+% @item @var{mx} (optional) Local maxima, as output by
+% minmax_likelihood().
+% @end itemize
 % @end deftypefn
 %
 function polar_likelihood (model, mn, mx, ncontours)

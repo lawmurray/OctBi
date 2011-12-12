@@ -4,27 +4,27 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_trace2d (@var{in}, @var{invar1}, @var{coord1}, @var{invar2}, @var{coord2}, @var{rang})
+% @deftypefn {Function File} {} plot_trace2d (@var{in}, @var{invar1}, @var{coord1}, @var{invar2}, @var{coord2}, @var{rang})
 %
 % Plot trace of samples output by mcmc program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% mcmc.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% mcmc.
 %
-% @bullet{ @var{invar1} Name of first variable from input file to plot.
+% @item @var{invar1} Name of first variable from input file to plot.
 %
-% @bullet{ @var{invar2} Name of second variable from input file to plot.
+% @item @var{invar2} Name of second variable from input file to plot.
 %
-% @bullet{ @var{coord1} Vector of spatial coordinates of zero
+% @item @var{coord1} Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar1} to plot.}
+% component of @var{invar1} to plot.
 %
-% @bullet{ @var{coord2} (optional) Vector of spatial coordinates of zero
+% @item @var{coord2} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar2} to plot.}
+% component of @var{invar2} to plot.
 %
-% @bullet{ @var{rang} (optional) Vector of indices of samples to
+% @item @var{rang} (optional) Vector of indices of samples to
 % plot. All trajectories plotted if not specified.
 % @end itemize
 % @end deftypefn

@@ -4,13 +4,14 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_ess (@var{in})
+% @deftypefn {Function File} {} plot_ess (@var{in})
 %
 % Plot output of the pf program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% pf.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% pf.
+% @end itemize
 % @end deftypefn
 %
 function plot_ess (in)

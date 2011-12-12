@@ -4,7 +4,7 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_defaults ()
+% @deftypefn {Function File} {} plot_defaults ()
 %
 % Sets default decorations and axes for plots.
 % @end deftypefn

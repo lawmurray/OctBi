@@ -4,21 +4,22 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} contour_model (@var{model}, @var{mn}, @var{mx}, @var{ax}, @var{lvl})
+% @deftypefn {Function File} {} contour_model (@var{model}, @var{mn}, @var{mx}, @var{ax}, @var{lvl})
 %
 % Surface plot for 2-dimensional likeilhood noise.
 %
 % @itemize
-% @bullet{ @var{model} Model, as output by krig_likelihood().}
+% @item @var{model} Model, as output by krig_likelihood().
 %
-% @bullet{ @var{mn} (optional) Local minima, as output by min_model().}
+% @item @var{mn} (optional) Local minima, as output by min_model().
 %
-% @bullet{ @var{mx} (optional) Global maxima, as output by max_model().}
+% @item @var{mx} (optional) Global maxima, as output by max_model().
 %
-% @bullet{ @var{ax} (optional) Axis range. If not specified, determined
+% @item @var{ax} (optional) Axis range. If not specified, determined
 % from model.
 %
-% @bullet{ @var{lvl} (optional) Contour levels.
+% @item @var{lvl} (optional) Contour levels.
+% @end itemize
 % @end deftypefn
 %
 function contour_model (model, mn, mx, ax, lvl)

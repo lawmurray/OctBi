@@ -9,10 +9,8 @@
 % Krig likelihood noise.
 %
 % @itemize
-% @bullet{ @var{model} Model.}
-%
-% @bullet{ @var{maxiters} Maximum number of iterations in each optimisation
-% run.
+% @item @var{model} Model.
+% @item @var{maxiters} Maximum number of iterations in each optimisation run.
 % @end itemize
 % @end deftypefn
 %

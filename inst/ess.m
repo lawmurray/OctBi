@@ -4,12 +4,13 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} ess (@var{lws})
+% @deftypefn {Function File} {@var{ss} = } ess (@var{lws})
 %
 % Compute effective sample size (ESS) for given log-weights.
 %
 % @itemize
-% @bullet{ @var{lws} Log-weights.}
+% @item @var{lws} Log-weights.
+% @end itemize
 % @end deftypefn
 %
 function ss = ess (lws)

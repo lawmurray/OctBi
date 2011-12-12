@@ -9,17 +9,15 @@
 % Read variable from NetCDF file.
 %
 % @itemize
-% @bullet{ @var{nc} NetCDF file handle.}
+% @item @var{nc} NetCDF file handle.
+% @item @var{name} Name of the variable.
 %
-% @bullet{ @var{name} Name of the variable.}
-%
-% @bullet{ @var{coord} (optional) Spatial coordinates. Zero to three
+% @item @var{coord} (optional) Spatial coordinates. Zero to three
 % element vector containing spatial coordinates for the desired component
-% of this variable.}
+% of this variable.
 %
-% @bullet{ @var{ps} (optional) Trajectory indices.}
-%
-% @bullet{ @var{ts} (optional) Time indices.}
+% @item @var{ps} (optional) Trajectory indices.
+% @item @var{ts} (optional) Time indices.
 % @end itemize
 % @end deftypefn
 %

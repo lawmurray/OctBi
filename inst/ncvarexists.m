@@ -9,9 +9,8 @@
 % Check if a dimension of the given name exists in the given NetCDF file.
 %
 % @itemize
-% @bullet{ @var{nc} NetCDF file hande.}
-%
-% @bullet( @var{var} Variable name.}
+% @item @var{nc} NetCDF file hande.
+% @item @var{var} Variable name.
 % @end itemize
 % @end deftypefn
 %

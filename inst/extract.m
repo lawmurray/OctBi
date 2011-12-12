@@ -4,18 +4,18 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} extract (@var{in}, @var{out}, @var{vars}, @var{rang})
+% @deftypefn {Function File} {} extract (@var{in}, @var{out}, @var{vars}, @var{rang})
 %
 % Extract variables from one NetCDF file into another.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Name of a NetCDF file.}
+% @item @var{in} Input file. Name of a NetCDF file.
 %
-% @bullet{ @var{out} Output file. Name of a NetCDF file to create.}
+% @item @var{out} Output file. Name of a NetCDF file to create.
 %
-% @bullet{ @var{vars} Names of variables as cell array.}
+% @item @var{vars} Names of variables as cell array.
 %
-% @bullet{ @var{rang} Range along time dimension to extract.
+% @item @var{rang} Range along time dimension to extract.
 % @end itemize
 % @end deftypefn
 %

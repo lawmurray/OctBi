@@ -4,17 +4,17 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} hist_urts (@var{in}, @var{invar}, @var{logn})
+% @deftypefn {Function File} {} hist_urts (@var{in}, @var{invar}, @var{logn})
 %
 % Plot histogram of parameter samples output by urts program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% ukf.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% ukf.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{logn} (optional) True if this is a log-variable, false
+% @item @var{logn} (optional) True if this is a log-variable, false
 % otherwise.
 % @end itemize
 % @end deftypefn

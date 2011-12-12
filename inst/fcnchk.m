@@ -1,3 +1,3 @@
-function f=fcnchk(x, n)
+function f = fcnchk(x, n)
   f = x;
 end

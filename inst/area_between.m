@@ -8,13 +8,13 @@
 %
 % Plot area between two curves.
 %
-% @itemize
-% @bullet{ @var{x} X-coordinates.}
-% @bullet{ @var{y1} Y-coordinates of first curve.}
-% @bullet{ @var{y2} Y-coordinates of second curve.}
-% @bullet{ @var{c} Color.}
-% @bullet{ @var{fd} Opaque fade.}
-% @bullet{ @var{alpha} Alpha.}
+% @itemize @bullet
+% @item @var{x} X-coordinates.
+% @item @var{y1} Y-coordinates of first curve.
+% @item @var{y2} Y-coordinates of second curve.
+% @item @var{c} Color.
+% @item @var{fd} Opaque fade.
+% @item @var{alpha} Alpha.
 % @end itemize
 % @end deftypefn
 %

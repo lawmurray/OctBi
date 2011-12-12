@@ -4,23 +4,23 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_obs (@var{in}, @var{invar1}, @var{invar2}, @var{coord}, @var{ns})
+% @deftypefn {Function File} {} plot_obsphase (@var{in}, @var{invar1}, @var{invar2}, @var{coord}, @var{ns})
 %
 % Plot observations in phase space.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file containing
-% observations.}
+% @item @var{in} Input file. Gives the name of a NetCDF file containing
+% observations.
 %
-% @bullet{ @var{invar1} Name of variable from input file for x-axis.
+% @item @var{invar1} Name of variable from input file for x-axis.
 %
-% @bullet{ @var{invar2} Name of variable from input file for y-axis.
+% @item @var{invar2} Name of variable from input file for y-axis.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
+% component of @var{invar} to plot.
 %
-% @bullet{ @var{ns} (optional) Index along ns dimension of input file.}
+% @item @var{ns} (optional) Index along ns dimension of input file.
 % @end itemize
 % @end deftypefn
 %

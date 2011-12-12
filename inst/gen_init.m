@@ -4,22 +4,22 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} gen_init (@var{in}, @var{invar}, @var{out}, @var{outvar}, @var{p})
+% @deftypefn {Function File} {} gen_init (@var{in}, @var{invar}, @var{out}, @var{outvar}, @var{p})
 %
 % Generate a initialisation file to match initial value of given trajectory
 % in output of simulate program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Name of a NetCDF file output by simulate.}
+% @item @var{in} Input file. Name of a NetCDF file output by simulate.
 %
-% @bullet{ @var{invar} Name of variable from input file to disturb.}
+% @item @var{invar} Name of variable from input file to disturb.
 %
-% @bullet{ @var{out} Output file. Name of a NetCDF file to create.}
+% @item @var{out} Output file. Name of a NetCDF file to create.
 %
-% @bullet{ @var{outvar} Name of variable in output file to create.}
+% @item @var{outvar} Name of variable in output file to create.
 %
-% @bullet{ @var{p} Index along the @t{np} dimension of the
-% input file, indicating the trajectory to use in initialisation.}
+% @item @var{p} Index along the @t{np} dimension of the
+% input file, indicating the trajectory to use in initialisation.
 % @end itemize
 % @end deftypefn
 %

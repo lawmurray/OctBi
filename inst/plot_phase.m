@@ -4,26 +4,27 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_phase (@var{in}, @var{invar1}, @var{invar2}, @var{coord}, @var{rang})
+% @deftypefn {Function File} {} plot_phase (@var{in}, @var{invar1}, @var{invar2}, @var{coord}, @var{rang})
 %
 % Plot trajectories output by simulate, predict, pf, mcmc or likelihood
 % program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% simulate.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% simulate.
 %
-% @bullet{ @var{invar1} Name of variable from input file to plot along x-axis.
+% @item @var{invar1} Name of variable from input file to plot along
+% x-axis.
 %
-% @bullet{ @var{invar2} Name of variable from input file to plot along y-axis.
+% @item @var{invar2} Name of variable from input file to plot along
+% y-axis.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
-% plot. All trajectories plotted if not specified.
+% component of @var{invar} to plot.
 %
-% @bullet{ @var{rang} (optional) Vector of indices of trajectories to
-% plot.
+% @item @var{rang} (optional) Vector of indices of trajectories to
+% plot. All trajectories plotted if not specified.
 % @end itemize
 % @end deftypefn
 %

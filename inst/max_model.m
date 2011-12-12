@@ -4,16 +4,16 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} @var{mx} = max_model (@var{model})
+% @deftypefn {Function File} {@var{mx} =} max_model (@var{model})
 %
 % Find global maximum of model.
 %
 % @itemize
-% @bullet{ @var{model} Model, as output by model_*().}
+% @item @var{model} Model, as output by model_*().
 %
-% @bullet{ @var{attempts} Number of optimisation runs to attempt.
+% @item @var{attempts} Number of optimisation runs to attempt.
 %
-% @bullet{ @var{maxiters} Maximum number of iterations in each optimisation
+% @item @var{maxiters} Maximum number of iterations in each optimisation
 % run.
 % @end itemize
 % @end deftypefn

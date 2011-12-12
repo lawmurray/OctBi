@@ -4,21 +4,21 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_trace (@var{in}, @var{invar}, @var{coord}, @var{rang})
+% @deftypefn {Function File} {} plot_trace (@var{in}, @var{invar}, @var{coord}, @var{rang})
 %
 % Plot trace of samples output by mcmc program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% mcmc.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% mcmc.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
+% component of @var{invar} to plot.
 %
-% @bullet{ @var{rang} (optional) Vector of indices of samples to
+% @item @var{rang} (optional) Vector of indices of samples to
 % plot. All samples plotted if not specified.
 % @end itemize
 % @end deftypefn

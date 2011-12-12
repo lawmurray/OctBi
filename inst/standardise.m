@@ -4,17 +4,16 @@
 % $Date: 2011-06-28 11:46:45 +0800 (Tue, 28 Jun 2011) $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} standardise (@var{X}, @var{mu}, @var{Sigma})
+% @deftypefn {Function File} {@var{Z} = } standardise (@var{X}, @var{mu}, @var{Sigma})
 %
 % Standardise rows of @var{X} using given mean and standard deviation
 % vectors.
 %
 % @itemize
-% @bullet{ @var{X}}
-%
-% @bullet{ @var{mu} Mean vector.}
-%
-% @bullet{ @var{Sigma} Covariance matrix.}
+% @item @var{X}
+% @item @var{mu} Mean vector.
+% @item @var{Sigma} Covariance matrix.
+% @end itemize
 % @end deftypefn
 %
 function Z = standardise (X, mu, Sigma)

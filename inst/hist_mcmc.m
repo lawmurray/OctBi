@@ -4,24 +4,24 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} hist_mcmc (@var{ins}, @var{invar}, @var{coord}, @var{ps}, @var{logn})
+% @deftypefn {Function File} {} hist_mcmc (@var{ins}, @var{invar}, @var{coord}, @var{ps}, @var{logn})
 %
 % Plot histogram of parameter samples output by mcmc program.
 %
 % @itemize
-% @bullet{ @var{ins} Input files. Gives the names of NetCDF files output by
-% mcmc.}
+% @item @var{ins} Input files. Gives the names of NetCDF files output by
+% mcmc.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
+% component of @var{invar} to plot.
 %
-% @bullet{ @var{ps} (optional) Vector of indices of samples to
+% @item @var{ps} (optional) Vector of indices of samples to
 % plot. All samples plotted if not specified.
 %
-% @bullet{logn} (optional) True to histogram log of variable, false
+% @item @var{logn} (optional) True to histogram log of variable, false
 % otherwise.
 % @end itemize
 % @end deftypefn

@@ -4,15 +4,15 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} surf_model (@var{model}, @var{mn}, @var{mx})
+% @deftypefn {Function File} {} surf_model (@var{model}, @var{mn}, @var{mx})
 %
 % Surface plot for 2-dimensional model.
 %
 % @itemize
-% @bullet{ @var{model} Model, as output by model_*().}
-%
-% @bullet{ @var{ax} (optional) Axis range. If not specified, determined
+% @item @var{model} Model, as output by model_*().
+% @item @var{ax} (optional) Axis range. If not specified, determined
 % from model.
+% @end itemize
 % @end deftypefn
 %
 function surf_model (model, ax)

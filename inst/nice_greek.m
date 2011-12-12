@@ -10,7 +10,7 @@
 % returns @var{name}.
 %
 % @itemize
-% @bullet{ @var{name} Name of the variable.}
+% @item @var{name} Name of the variable.
 % @end itemize
 % @end deftypefn
 %

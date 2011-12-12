@@ -4,23 +4,23 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_obs (@var{in}, @var{invars}, @var{coord}, @var{ts}, @var{ns})
+% @deftypefn {Function File} {} plot_obs (@var{in}, @var{invars}, @var{coord}, @var{ts}, @var{ns})
 %
 % Plot observations.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file containing
-% observations.}
+% @item @var{in} Input file. Gives the name of a NetCDF file containing
+% observations.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
+% component of @var{invar} to plot.
 %
-% @bullet{ @var{ts} (optional) Time indices.
+% @item @var{ts} (optional) Time indices.
 %
-% @bullet{ @var{ns} (optional) Index along ns dimension of input file.}
+% @item @var{ns} (optional) Index along ns dimension of input file.
 % @end itemize
 % @end deftypefn
 %

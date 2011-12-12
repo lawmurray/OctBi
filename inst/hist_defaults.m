@@ -4,7 +4,7 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} hist_defaults ()
+% @deftypefn {Function File} {} hist_defaults ()
 %
 % Sets default decorations and axes for histograms.
 % @end deftypefn

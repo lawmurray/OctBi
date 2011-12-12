@@ -4,35 +4,35 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} gen_obs (@var{in}, @var{invar}, @var{out}, @var{outvar}, @var{p}, @var{ts}, @var{S}, @var{logn}, @var{coords})
+% @deftypefn {Function File} {} gen_obs (@var{in}, @var{invar}, @var{out}, @var{outvar}, @var{p}, @var{ts}, @var{S}, @var{logn}, @var{coords})
 %
 % Generate a data set for twin experiments from the output of the simulate
 % program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Name of a NetCDF file output by simulate.}
+% @item @var{in} Input file. Name of a NetCDF file output by simulate.
 %
-% @bullet{ @var{invar} Name of variable from input file to disturb.}
+% @item @var{invar} Name of variable from input file to disturb.
 %
-% @bullet{ @var{out} Output file. Name of a NetCDF file to create.}
+% @item @var{out} Output file. Name of a NetCDF file to create.
 %
-% @bullet{ @var{outvar} Name of variable in output file to create.}
+% @item @var{outvar} Name of variable in output file to create.
 %
-% @bullet{ @var{p} Trajectory index, indicating that to perturb to create
-% observations.}
+% @item @var{p} Trajectory index, indicating that to perturb to create
+% observations.
 %
-% @bullet{ @var{ts} Time indices.}
+% @item @var{ts} Time indices.
 %
-% @bullet{ @var{S} List of standard deviations of disturbance
+% @item @var{S} List of standard deviations of disturbance
 % noise. Each value produces a corresponding record along the @t{ns}
-% dimension of the output file.}
+% dimension of the output file.
 %
-% @bullet{ @var{logn} (optional) True for log-normal noise, false for normal
-% noise.}
+% @item @var{logn} (optional) True for log-normal noise, false for normal
+% noise.
 %
-% @bullet{ @var{coords} (optional) Matrix of spatial coordinates of zero
+% @item @var{coords} (optional) Matrix of spatial coordinates of zero
 % to three columns. Each row gives the x, y and z coordinates of a
-% component of @var{invar} to disturb.}
+% component of @var{invar} to disturb.
 % @end itemize
 % @end deftypefn
 %

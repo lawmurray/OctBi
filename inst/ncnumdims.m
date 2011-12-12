@@ -9,9 +9,9 @@
 % Number of dimensions for variable in NetCDF file.
 %
 % @itemize
-% @bullet{ @var{nc} NetCDF file handle.}
+% @item @var{nc} NetCDF file handle.
 %
-% @bullet{ @var{name} Name of the variable.}
+% @item @var{name} Name of the variable.
 % @end itemize
 % @end deftypefn
 %

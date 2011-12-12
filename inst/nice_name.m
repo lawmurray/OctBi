@@ -9,9 +9,9 @@
 % Construct human-readable name for variable.
 %
 % @itemize
-% @bullet{ @var{name} Name of the variable.}
+% @item @var{name} Name of the variable.
 %
-% @bullet{ @var{coord} zero to three element vector containing dimension
+% @item @var{coord} zero to three element vector containing dimension
 % indices for the desired component of this variable.
 % @end itemize
 % @end deftypefn

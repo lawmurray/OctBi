@@ -9,7 +9,7 @@
 % Fit kernel density estimate to model.
 %
 % @itemize
-% @bullet{ @var{model} Model.}
+% @item @var{model} Model.
 % @end itemize
 % @end deftypefn
 %

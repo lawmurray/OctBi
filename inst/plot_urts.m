@@ -4,21 +4,21 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_urts (@var{in}, @var{invar}, @var{coord}, @var{islog})
+% @deftypefn {Function File} {} plot_urts (@var{in}, @var{invar}, @var{coord}, @var{islog})
 %
 % Plot output of the urts program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% pf.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% pf.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
+% component of @var{invar} to plot.
 %
-% @bullet{ @var{islog} (optional) True if this is a log-variable, false
+% @item @var{islog} (optional) True if this is a log-variable, false
 % otherwise.
 % @end itemize
 % @end deftypefn

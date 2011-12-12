@@ -9,17 +9,16 @@
 % Read observation from NetCDF file.
 %
 % @itemize
-% @bullet{ @var{nc} NetCDF file handle.}
+% @item @var{nc} NetCDF file handle.
+% @item @var{name} Name of the variable.
 %
-% @bullet{ @var{name} Name of the variable.}
-%
-% @bullet{ @var{coord} (optional) Spatial coordinates. Zero to three
+% @item @var{coord} (optional) Spatial coordinates. Zero to three
 % element vector containing spatial coordinates for the desired component
-% of this variable.}
+% of this variable.
 %
-% @bullet{ @var{ts} (optional) Time indices.
+% @item @var{ts} (optional) Time indices.
 %
-% @bullet{ @var{ns} (optional) Index along ns dimension of input file.}
+% @item @var{ns} (optional) Index along ns dimension of input file.
 % @end itemize
 % @end deftypefn
 %

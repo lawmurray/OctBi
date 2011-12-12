@@ -4,19 +4,19 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} hist_pf (@var{in}, @var{invar}, @var{coord})
+% @deftypefn {Function File} {} hist_pf (@var{in}, @var{invar}, @var{coord})
 %
 % Plot histogram of parameter samples output by pf program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% mcmc.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% mcmc.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
+% component of @var{invar} to plot.
 % @end itemize
 % @end deftypefn
 %

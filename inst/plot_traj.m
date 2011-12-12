@@ -4,25 +4,25 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} plot_traj (@var{in}, @var{invar}, @var{coord}, @var{ps}, @var{ts})
+% @deftypefn {Function File} {} plot_traj (@var{in}, @var{invar}, @var{coord}, @var{ps}, @var{ts})
 %
 % Plot trajectories output by simulate, predict, pf, mcmc or likelihood
 % program.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% simulate.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% simulate.
 %
-% @bullet{ @var{invar} Name of variable from input file to plot.
+% @item @var{invar} Name of variable from input file to plot.
 %
-% @bullet{ @var{coord} (optional) Vector of spatial coordinates of zero
+% @item @var{coord} (optional) Vector of spatial coordinates of zero
 % to three elements, giving the x, y and z coordinates of a
-% component of @var{invar} to plot.}
-% plot. All trajectories plotted if not specified.
+% component of @var{invar} to plot.
 %
-% @bullet{ @var{ps} (optional) Trajectory indices.
+% @item @var{ps} (optional) Trajectory indices. All trajectories plotted if
+% not specified.
 %
-% @bullet{ @var{ts} (optional) Time indices.
+% @item @var{ts} (optional) Time indices.
 % @end itemize
 % @end deftypefn
 %

@@ -4,20 +4,20 @@
 % $Date: 2011-06-28 13:46:45 +1000 (Tue, 28 Jun 2011) $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} converge (@var{in}, @var{invars},  @var{rang})
+% @deftypefn {Function File} {@var{Rp} = } converge (@var{in}, @var{invars},  @var{rang})
 %
-% Plot progress of the $\hat{R}^p$ statistic of Brooks & Gelman (1998).
+% Plot progress of the @math{\hat{R}^p} statistic of Brooks & Gelman (1998).
 %
 % @itemize
-% @bullet{ @var{ins} Cell array giving names of input files, each the name of
-% a NetCDF file output by mcmc.}
+% @item @var{ins} Cell array giving names of input files, each the name of
+% a NetCDF file output by mcmc.
 %
-% @bullet{ @var{invars} Cell array giving names of variables to plot.
+% @item @var{invars} Cell array giving names of variables to plot.
 %
-% @bullet{ @var{coords} Cell array giving coordinates of variables to plot,
+% @item @var{coords} Cell array giving coordinates of variables to plot,
 % each element matching an element of @var{invars}.
 %
-% @bullet{ @var{rang} (optional) Vector of indices of samples to
+% @item @var{rang} (optional) Vector of indices of samples to
 % include. Useful for excluding burn-in periods, for instance.
 % @end itemize
 % @end deftypefn

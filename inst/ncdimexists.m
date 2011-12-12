@@ -4,14 +4,14 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} ncdimexists (@var{nc}, @var{dim})
+% @deftypefn {Function File} {} ncdimexists (@var{nc}, @var{dim})
 %
 % Check if a dimension of the given name exists in the given NetCDF file.
 %
 % @itemize
-% @bullet{ @var{nc} NetCDF file hande.}
+% @item @var{nc} NetCDF file hande.
 %
-% @bullet( @var{dim} Dimension name.}
+% @item @var{dim} Dimension name.
 % @end itemize
 % @end deftypefn
 %

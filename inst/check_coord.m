@@ -4,14 +4,13 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} @var{valid} = } check_coord (@var{coord})
+% @deftypefn {Function File} {@var{valid} = } check_coord (@var{coord})
 %
 % Check coord argument given to function.
 %
 % @itemize
-% @bullet{ @var{coord} Vector of spatial coordinates of zero
-% to three elements, giving the x, y and z coordinates of a
-% variable.}
+% @item @var{coord} Vector of spatial coordinates of zero to three elements,
+% giving the x, y and z coordinates of a variable.
 % @end itemize
 % @end deftypefn
 %

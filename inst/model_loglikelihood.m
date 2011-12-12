@@ -4,21 +4,21 @@
 % $Date: $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} model_loglikelihood (@var{in}, @var{invars}, @var{coords}, @var{M})
+% @deftypefn {Function File} {} model_loglikelihood (@var{in}, @var{invars}, @var{coords}, @var{M})
 %
 % Construct model for spatial exploration of likelihood.
 %
 % @itemize
-% @bullet{ @var{in} Input file. Gives the name of a NetCDF file output by
-% likelihood.}
+% @item @var{in} Input file. Gives the name of a NetCDF file output by
+% likelihood.
 %
-% @bullet{ @var{invars} Name of variables from input file to include.
+% @item @var{invars} Name of variables from input file to include.
 %
-% @bullet{ @var{coords} Cell array giving vectors of spatial
+% @item @var{coords} Cell array giving vectors of spatial
 % coordinates of zero to three elements, giving the x, y and z coordinates of
-% the corresponding variable in @var{invars} to plot.}
+% the corresponding variable in @var{invars} to plot.
 %
-% @bullet{ @var{M} Number of repeated likelihood computations for each
+% @item @var{M} Number of repeated likelihood computations for each
 % sample in file.
 % @end itemize
 % @end deftypefn

@@ -8,20 +8,21 @@
 %
 % Construct model for spatial exploration of acceptance rates.
 %
-% @itemize @bullet{ @var{ins} Input file name, or cell array of file
-% names. Gives the name of NetCDF files output by likelihood.}
+% @itemize
+% @item @var{ins} Input file name, or cell array of file
+% names. Gives the name of NetCDF files output by likelihood.
 %
-% @bullet{ @var{invars} Name of variables from input file to include.
+% @item @var{invars} Name of variables from input file to include.
 %
-% @bullet{ @var{coords} Cell array giving vectors of spatial
+% @item @var{coords} Cell array giving vectors of spatial
 % coordinates of zero to three elements, giving the x, y and z coordinates of
-% the corresponding variable in @var{invars} to plot.}
+% the corresponding variable in @var{invars} to plot.
 %
-% @bullet{ @var{M} Number of repeated likelihood computations for each
+% @item @var{M} Number of repeated likelihood computations for each
 % sample in file.
 %
-% @bullet{ @var{logs} Indices of variables for which to take logarithm
-% before standardising.}
+% @item @var{logs} Indices of variables for which to take logarithm
+% before standardising.
 % @end itemize
 % @end deftypefn
 %

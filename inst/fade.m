@@ -9,9 +9,8 @@
 % Fade colour.
 %
 % @itemize
-% @bullet{ @var{rgb} RGB triplet.}
-%
-% @bullet{ @var{amount} Amount to fade.}
+% @item @var{rgb} RGB triplet.
+% @item @var{amount} Amount to fade.
 % @end itemize
 %
 % Returns colour faded by the given amount.
