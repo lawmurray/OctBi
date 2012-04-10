@@ -25,14 +25,14 @@ function X = read_var (nc, name, coord, ps, ts)
     % check arguments
     if nargin < 2 || nargin > 5
         print_usage ();
-    elseif nargin == 2
+    end
+    if nargin < 3
         coord = [];
+    end
+    if nargin < 4
         ps = [];
-        ts = [];
-    elseif nargin == 3
-        ps = [];
-        ts = [];
-    elseif nargin == 4
+    end
+    if nargin < 5
         ts = [];
     end
     
@@ -72,7 +72,7 @@ function X = read_var (nc, name, coord, ps, ts)
                     X = nc{name}(ps);
                 else
                     X = nc{name}(ts,ps);
-                end            
+                end
             elseif length(coord) == 1
                 if numdims == 2
                     X = nc{name}(coord(1),ps);

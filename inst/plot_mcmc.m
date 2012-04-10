@@ -60,6 +60,12 @@ function plot_mcmc (ins, invar, coord, ps, ts)
 
     % data
     q = [0.025 0.5 0.975]'; % quantiles (median and 95%)
+    
+    % workaround for single trajectory, otherwise quantile returns sorted X
+    % (bug in quantile?)
+    if columns (X) == 1
+      X = [ X X ];
+    end  
     Q = quantile (X, q, 2);
     
     % plot

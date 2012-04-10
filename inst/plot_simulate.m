@@ -57,8 +57,14 @@ function plot_simulate (in, invar, coord, ps, ts)
     t = nci{'time'}(ts)'; % times
     q = [0.025 0.5 0.975]'; % quantiles (median and 95%)
     X = read_var (nci, invar, coord, ps, ts);
-    Q = quantile (X, q, 2);
     
+    % workaround for single trajectory, otherwise quantile returns sorted X
+    % (bug in quantile?)
+    if columns (X) == 1
+      X = [ X X ];
+    end  
+    Q = quantile (X, q, 2);
+
     % plot
     ish = ishold;
     if !ish
