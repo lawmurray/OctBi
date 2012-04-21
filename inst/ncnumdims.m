@@ -4,7 +4,7 @@
 % $Date: 2011-06-28 11:46:45 +0800 (Tue, 28 Jun 2011) $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {@var{n} = } num_dims (@var{nc}, @var{name})
+% @deftypefn {Function File} {@var{n} = } ncnumdims (@var{nc}, @var{name})
 %
 % Number of dimensions for variable in NetCDF file.
 %
