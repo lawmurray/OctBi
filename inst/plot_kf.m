@@ -50,10 +50,9 @@ function plot_kf (in, invar, coord)
     id = nci{strcat('index.', invar)}(:) + 1 + offset;
     mu = nci{invar}(:);
     rs = squeeze(nci{'S_'}(:,id,:));
-    cs = squeeze(nci{'S_'}(:,:,id));
     
     for n = 1:length(t)
-        sigma = sqrt(rs(n,:)*cs(n,:)');
+        sigma = sqrt(rs(n,:)*rs(n,:)');
         if sigma > 0
             Q(n,:) = norminv(P, mu(n), sigma);
         else
