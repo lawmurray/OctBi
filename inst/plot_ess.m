@@ -6,7 +6,8 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {} plot_ess (@var{in})
 %
-% Plot output of the pf program.
+% Compute and plot effective sample size (ESS) at each time from the output
+% of the pf program.
 %
 % @itemize
 % @item @var{in} Input file. Gives the name of a NetCDF file output by

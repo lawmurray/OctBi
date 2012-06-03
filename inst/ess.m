@@ -24,5 +24,5 @@ function ss = ess (lws)
   ws = exp(lws - Mx);
   num = sum(ws, 2).^2;
   den = sum(ws.^2, 2);
-  ss = num ./ den;
+  ss = num./den;
 end
