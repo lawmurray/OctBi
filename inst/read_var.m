@@ -122,4 +122,9 @@ function X = read_var (nc, name, coord, ps, ts)
     end
     
     X = squeeze(X);
+    if length (ts) == 1
+        % time dimension will have been removed by squeeze, but we
+        % didn't want this
+        X = X';
+    end
 end

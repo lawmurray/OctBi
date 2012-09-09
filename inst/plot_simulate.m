@@ -58,18 +58,19 @@ function plot_simulate (in, invar, coord, ps, ts)
     q = [0.025 0.5 0.975]'; % quantiles (median and 95%)
     X = read_var (nci, invar, coord, ps, ts);
     
-    % workaround for single trajectory, otherwise quantile returns sorted X
-    % (bug in quantile?)
+    % workaround for single trajectory, otherwise quantile returns
+    % sorted X (bug in quantile?)
     if columns (X) == 1
-      X = [ X X ];
+        X = [ X X ];
     end  
     Q = quantile (X, q, 2);
-
+    
     % plot
     ish = ishold;
     if !ish
         cla % patch doesn't clear otherwise
     end
+    
     area_between(t, Q(:,1), Q(:,3), gray()(48,:), 1.0, 0.2);
     hold on
     plot(t, Q(:,2), 'linewidth', 3, 'color', gray()(48,:));
