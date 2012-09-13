@@ -56,12 +56,14 @@ function [t y] = read_obs (nc, name, coord, ts, ns)
         (sprintf ('nr_%s', prefix));
         (sprintf ('nr%s', prefix));
         (sprintf ('n%s', prefix));
+        ('nr');
     };
     T = 1;
     for i = 1:length (tdims)
         tdim = tdims{i};
         if ncdimexists (nc, tdim)
             T = length (nc(tdim));
+            break;
         end
     end
     if isempty (ts)
