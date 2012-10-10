@@ -50,7 +50,7 @@ function plot_trace (in, invar, coord, rang)
     X = read_var (nci, invar, coord, rang, 1);
     
     % plot
-    plot(X, 'linewidth', 1, 'color', watercolour(2));
+    plot(rang, X, 'linewidth', 1, 'color', watercolour(2));
     %title(nice_name(name, dims));
     %plot_defaults;
     

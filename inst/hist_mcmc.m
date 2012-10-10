@@ -23,16 +23,22 @@
 %
 % @item @var{logn} (optional) True to histogram log of variable, false
 % otherwise.
+%
+% @item @var{priorpdf} (optional) Name of pdf of prior distribution.
+%
+% @item @var{priorparams} (optional) Cell array of arguments to
+% @var{priorpdf}.
+%
 % @end itemize
 % @end deftypefn
 %
-function hist_mcmc (ins, invar, coord, ps, logn)
+function hist_mcmc (ins, invar, coord, ps, logn, priorpdf, priorparams)
     % constants
     THRESHOLD = 5e-3; % threshold for bin removal start and end
     BINS = 20;
 
     % check arguments
-    if (nargin < 2 || nargin > 5)
+    if (nargin < 2 || nargin > 7)
         print_usage ();
     end
     if nargin < 3
@@ -44,6 +50,13 @@ function hist_mcmc (ins, invar, coord, ps, logn)
     if nargin < 5
         logn = 0;
     end
+    if nargin < 6
+        priorpdf = '';
+    end
+    if nargin < 7
+        varargin = {};
+    end
+        
     if !check_coord (coord)
         error ('coord should be a vector with at most three elements');
     end
@@ -99,19 +112,27 @@ function hist_mcmc (ins, invar, coord, ps, logn)
             
     % scale
     xsize = max(xx) - min(xx); % range of x values in histogram
-    %xdelta = xsize / 100; % res for prior distro plot
     ysize = mean(mm); % average bar height
-
-    % prior
-    %x = min([ xx, truth(i) ]):xdelta:max([ xx, truth(i) ]);
-    %if i == 3
-    %    y = normpdf(x, mu0(i), sigma0(i));
-    %else
-    %    y = lognpdf(x, mu0(i), sigma0(i));
-    %end
-    %peak = max(max(nn) / sum(xsize/BINS*mm), max(y));
                         
     % plot
     h = bar(yy,mm/(xsize*ysize), 1.0); % normalised histogram
-    set(h, 'FaceColor', fade(watercolour(2),0.5), 'EdgeColor', watercolour(2));
+    set(h, 'FaceColor', fade(watercolour(2),0.5), 'EdgeColor', ...
+           watercolour(2));
+
+    % prior
+    if !strcmp(priorpdf, '')
+        xdelta = xsize / 100; % res for prior distro plot
+        x = [min(xx):xdelta:max(xx)];
+        y = feval(priorpdf, x, priorparams{:});
+        %peak = max(max(nn) / sum(xsize/BINS*mm), max(y));
+        
+        ish = ishold;
+        hold on;
+        plot(x, y, 'linewidth', 3, 'color', gray()(48,:));
+        if ish
+            hold on
+        else
+            hold off
+        end
+    end
 end

@@ -25,10 +25,9 @@ function nice = nice_greek (name)
     for i = 1:length(greek)
         letter = greek{i};
         if strfind (name, letter) == 1
-            nice = strcat('{\', letter);
+            nice = strcat('\', letter);
             if length(name) > length(letter)
-                nice = strcat(nice, '_{', name(length(letter) + 1:end), ...
-                          '}');
+                nice = strcat(nice, '_{', name(length(letter) + 1:end));
             end
             nice = strcat(nice, '}');
             break;
