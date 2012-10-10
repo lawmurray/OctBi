@@ -47,7 +47,7 @@ function plot_trace (in, invar, coord, rang)
         rang = [1:P];
     end
     
-    X = read_var (nci, invar, coord, rang);
+    X = read_var (nci, invar, coord, rang, 1);
     
     % plot
     plot(X, 'linewidth', 1, 'color', watercolour(2));
