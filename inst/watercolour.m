@@ -9,19 +9,20 @@
 % Retrieve colour from watercolour palette.
 %
 % @itemize
-% @item @var{i} Colour index.
+% @item @var{i} (optional) Colour index. If not given, the whole palette is
+% returned, which is useful for passing to colormap().
 % @end itemize
 %
 % Returns colour at given index.
 %
 % @end deftypefn
 %
-function c = watercolour (i, fade)
+function c = watercolour (i)
     % check arguments
-    if (nargin != 1)
+    if (nargin > 1)
         print_usage ();
     end
-    if (!isscalar(i))
+    if nargin == 1 && !isscalar(i)
         error ('i must be scalar');
     end
     
@@ -35,5 +36,9 @@ function c = watercolour (i, fade)
                0.8000, 0.4745, 0.6549];
     
     % select from palette
-    c = palette(mod(i - 1, rows(palette)) + 1, :);
+    if nargin == 1
+        c = palette(mod(i - 1, rows(palette)) + 1, :);
+    else
+        c = palette;
+    end
 end
