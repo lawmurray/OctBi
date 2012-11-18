@@ -40,8 +40,8 @@ function area_between (x, y1, y2, c, fd, alpha)
     end
     
     % plot
-    a = [x x(end:-1:1)];
-    b = [y1 y2(end:-1:1)];
+    a = [vec(x); vec(x(end:-1:1))];
+    b = [vec(y1); vec(y2(end:-1:1))];
         
     bg = fade(c, fd);
     patch(a, b, bg, 'linewidth', 1, 'edgecolor', c, 'facealpha', alpha);
