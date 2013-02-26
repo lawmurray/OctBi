@@ -74,6 +74,7 @@ function bi_plot_quantiles (file, name, coord, ps, ts, col, sty)
     if !ish
         clf % patch doesn't clear otherwise
     end
+    
     area_between (times, Q(:,1), Q(:,3), style.color, 1.0, 0.2);
     hold on
     plot (times, Q(:,2), struct2options (style){:});

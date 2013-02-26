@@ -20,7 +20,7 @@
 % @end deftypefn
 %
 function times = read_times_simulator (nc, name, coord, ts)
-    if nc_var_has_dim (nc, name, 'nr')
+    if nc_var_has_dim (nc, 'time', 'nr')
         T = length (nc('nr'));
     else
         T = 1;
