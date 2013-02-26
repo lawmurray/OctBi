@@ -1,4 +1,4 @@
-% Copyright (C) 2011
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev$
 % $Date$
