@@ -32,10 +32,13 @@ function cvar = get_coord_var (nc, name)
         (sprintf ('coord_%s', prefix));
         (sprintf ('coord%s', prefix));
         (sprintf ('coord'));
-    };
+        };
+        
+        cvar = [];
     for i = 1:length (cvars)
-        cvar = cvars{i};
-        if nc_has_var (nc, cvar)
+        nm = cvars{i};
+        if nc_has_var (nc, nm)
+            cvar = nm;
             break;
         end
     end

@@ -33,9 +33,12 @@ function tvar = get_time_var (nc, name)
         (sprintf ('time%s', prefix));
         (sprintf ('time'));
         };        
+        
+        tvar = [];
     for i = 1:length (tvars)
-        tvar = tvars{i};
-        if nc_has_var (nc, tvar)
+        nm = tvars{i};
+        if nc_has_var (nc, nm)
+            tvar = nm;
             break;
         end
     end

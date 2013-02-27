@@ -4,7 +4,7 @@
 % $Date: 2013-02-06 02:44:37 +0800 (Wed, 06 Feb 2013) $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {@var{args} = } get_sparse_indices (@var{nc}, @var{name}, @var{coord}, @var{ts})
+% @deftypefn {Function File} {@var{args} = } get_sparse_indices (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts})
 %
 % Convert sparse to dense indices for reading variable.
 %
@@ -55,7 +55,6 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
         ps = [1:P];
     end
 
-    has_ns_dim = nc_has_dim (nc, 'ns');    
     tdim = get_time_dim (nc, name);
     tvar = get_time_var (nc, name);
     cvar = get_coord_var (nc, name);
@@ -79,14 +78,14 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
     end
 
     args = {};
-    if has_ns_dim
-        args{length (args) + 1} = ns;
-    end
-    
-    % read
     if dense
         if has_tdim
-            args{length (args) + 1} = ts;
+            if isempty (ts)
+                T = length (nc(tdim));
+                args{length (args) + 1} = [1:T];
+            else
+                args{length (args) + 1} = ts;
+            end
         end
         if length (coord) > 0
             from = length (args) + 1;

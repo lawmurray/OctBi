@@ -4,7 +4,7 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {@var{X} = } read_var_input (@var{nc}, @var{name}, @var{coord}, @var{ts}, @var{ns})
+% @deftypefn {Function File} {@var{X} = } read_var_input (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts})
 %
 % Read observation from NetCDF file.
 %
@@ -17,11 +17,14 @@
 %
 % @item @var{ps} (optional) Path indices.
 %
-% @item @var{t} (optional) Time index.
+% @item @var{ts} (optional) Time indices.
 % @end itemize
 % @end deftypefn
 %
-function X = read_var_input (nc, name, coord, ps, t)
-    args = get_sparse_indices (nc, name, coord, ps, t);
+function X = read_var_input (nc, name, coord, ps, ts)
+    args = get_sparse_indices (nc, name, coord, ps, ts);
+    if nc_var_has_dim (nc, name, 'ns')
+        args = {1; args{:}};
+    end
     X = full_squeeze (nc{name}(args{:}));
 end
