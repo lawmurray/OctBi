@@ -18,7 +18,7 @@
 %
 % @item @var{ps} (optional) Path indices.
 %
-% @item @var{ts} (optional) Time index.
+% @item @var{ts} (optional) Time index. Defaults to last time.
 %
 % @item @var{bins} (optional) Number of bins. Default 20.
 %

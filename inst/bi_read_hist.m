@@ -17,7 +17,7 @@
 %
 % @item @var{ps} (optional) Path indices.
 %
-% @item @var{t} (optional) Time index.
+% @item @var{t} (optional) Time index. Defaults to last time.
 %
 % @item @var{bins} (optional) Number of bins. Default 20.
 %
@@ -48,7 +48,7 @@ function [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold)
     if nargin < 5
         t = [];
     elseif !isempty (t) && !isscalar (t)
-        error ('ts must be a scalar');
+        error ('t must be a scalar');
     end
     if nargin < 6
         bins = [];
@@ -62,6 +62,10 @@ function [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold)
     end
     if isempty (threshold)
         threshold = 5.0e-3;
+    end
+    
+    if isempty (t)
+        t = length (nc('nr'))
     end
     
     % defer to implementation for schema
