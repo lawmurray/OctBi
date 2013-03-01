@@ -70,7 +70,7 @@ function [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold)
     
     % defer to implementation for schema
     switch nc.libbi_schema
-    case {"ParticleFilter", "FlexiParticleFilter"}
+    case {"ParticleFilter", "FlexiParticleFilter", "SMC2"}
         f = @read_hist_particle_filter;
     case {"KalmanFilter"}
         f = @read_hist_kalman_filter;
