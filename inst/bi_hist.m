@@ -68,7 +68,7 @@ function bi_hist (file, name, coord, ps, t, bins, threshold, col, sty)
     % plot
     style = get_style (col, sty, file, name);
     h = bar(xs, ns, 1.0); % normalised histogram
-    set(h, 'facecolor', fade(style.color, 0.5), 'edgecolor', style.color);
+    set(h, 'facecolor', fade(style.color, 0.3), 'edgecolor', style.color);
     
     ncclose (nc);
 end

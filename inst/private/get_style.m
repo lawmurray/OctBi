@@ -38,7 +38,7 @@ function style = get_style (col, sty, file, name)
     end
     
     % gray colour
-    gr = gray()(48,:);
+    gr = gray()(40,:);
     
     % global defaults
     style.linewidth = 3;
