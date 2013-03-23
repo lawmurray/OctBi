@@ -6,7 +6,7 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{ss} = } ess (@var{lws})
 %
-% Compute effective sample size (ESS) for given log-weights.
+% Compute the effective sample size (ESS) for given log-weights.
 %
 % @itemize
 % @item @var{lws} Log-weights.

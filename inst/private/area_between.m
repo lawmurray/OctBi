@@ -4,16 +4,21 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} area_between (x, y1, y2, c, fd, alpha)
+% @deftypefn {Function File} area_between (@var{x}, @var{y1}, @var{y2}, @var{c}, @var{fd}, @var{alpha})
 %
-% Plot area between two curves.
+% Plot the area between two curves.
 %
 % @itemize @bullet
 % @item @var{x} X-coordinates.
+%
 % @item @var{y1} Y-coordinates of first curve.
+%
 % @item @var{y2} Y-coordinates of second curve.
+%
 % @item @var{c} Color.
+%
 % @item @var{fd} Opaque fade.
+%
 % @item @var{alpha} Alpha.
 % @end itemize
 % @end deftypefn
@@ -24,10 +29,10 @@ function area_between (x, y1, y2, c, fd, alpha)
         print_usage ();
     end
     if nargin < 5
-        fd = 0.5;
+        fd = 1.0;
     end
     if nargin < 6
-        alpha = 1.0;
+        alpha = 0.5;
     end
     if !isvector(x)
         error ('x must be vector');

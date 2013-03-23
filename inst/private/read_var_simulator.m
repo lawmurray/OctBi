@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev$
 % $Date$
@@ -6,20 +6,8 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{X} = } read_var_simulator (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts})
 %
-% Read variable from NetCDF file.
+% Implementation of bi_read_var() for simulation schema.
 %
-% @itemize
-% @item @var{nc} NetCDF file handle.
-%
-% @item @var{name} Name of the variable.
-%
-% @item @var{coord} (optional) Dimensions index.
-%
-% @item @var{ps} (optional) Path indices.
-%
-% @item @var{ts} (optional) Time indices.
-%
-% @end itemize
 % @end deftypefn
 %
 function X = read_var_simulator (nc, name, coord, ps, ts)

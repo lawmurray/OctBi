@@ -6,8 +6,8 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{nice} = } nice_greek (@var{name})
 %
-% Convert named Greek letter to Greek symbol. If not a named Greek letter,
-% returns @var{name}.
+% Convert a named Greek letter to a LaTeX Greek symbol. If @var{name} does not
+% name a Greek letter, simply returns @var{name}.
 %
 % @itemize
 % @item @var{name} Name of the variable.
@@ -34,4 +34,3 @@ function nice = nice_greek (name)
         end
     end
 end
-

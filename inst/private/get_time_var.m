@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3446 $
 % $Date: 2013-02-06 02:44:37 +0800 (Wed, 06 Feb 2013) $
@@ -6,12 +6,12 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{tvar} = } get_time_var (@var{nc}, @var{name})
 %
-% Get time variable associated with a given variable.
+% Get the time variable associated with a given variable.
 %
 % @itemize
 % @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 % @end itemize
 % @end deftypefn
 %

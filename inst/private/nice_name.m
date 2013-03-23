@@ -9,10 +9,9 @@
 % Construct human-readable name for variable.
 %
 % @itemize
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
-% @item @var{coord} zero to three element vector containing dimension
-% indices for the desired component of this variable.
+% @item @var{coord} (optional) Dimension indices.
 % @end itemize
 % @end deftypefn
 %
@@ -59,4 +58,3 @@ function nice = nice_name (name, coord)
     end
     nice = strcat(nice, '}');
 end
-

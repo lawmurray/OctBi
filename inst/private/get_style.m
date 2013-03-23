@@ -1,12 +1,12 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3446 $
 % $Date: 2013-02-06 02:44:37 +0800 (Wed, 06 Feb 2013) $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {@var{style} = } get_style (@var{col}, @var{sty}, @var{file}, @var{name}, @var{col})
+% @deftypefn {Function File} {@var{style} = } get_style (@var{col}, @var{sty}, @var{file}, @var{name})
 %
-% Create cell array of style information for plot.
+% Create cell array of style information for a plot.
 %
 % @itemize
 % @item @var{col} Colour index.
@@ -15,7 +15,7 @@
 %
 % @item @var{file} (optional) NetCDF file name.
 %
-% @item @var{name} (optional) Name of the variable.
+% @item @var{name} (optional) Variable name.
 % @end itemize
 %
 % The final two arguments are used to create defaults in the case that either

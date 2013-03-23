@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev$
 % $Date$
@@ -6,25 +6,8 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {[@var{xs}, @var{ns}] = } read_hist_kalman_filter (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{t}, @var{bins}, @var{threshold})
 %
-% Read histogram from NetCDF file of Kalman filter schema.
+% Implementation of bi_read_hist() for Kalman filter schema.
 %
-% @itemize
-% @item @var{nc} NetCDF file.
-%
-% @item @var{name} Name of the variable.
-%
-% @item @var{coord} (optional) Dimension indices.
-%
-% @item @var{ps} (optional) Path indices.
-%
-% @item @var{t} (optional) Time index.
-%
-% @item @var{bins} (optional) Number of bins. Default 20.
-%
-% @item @var{threshold} (optional) Relative threshold on total mass for bin
-% removal at start and end. Default 5.0e-3.
-%
-% @end itemize
 % @end deftypefn
 %
 function [xs, ns] = read_hist_kalman_filter (nc, name, coord, ps, t, bins, threshold)

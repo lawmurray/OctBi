@@ -6,15 +6,19 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{n} = } nc_var_num_dims (@var{nc}, @var{name})
 %
-% Number of dimensions for NetCDF variable.
+% Get the number of dimensions for a NetCDF variable.
 %
 % @itemize
 % @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 % @end itemize
 % @end deftypefn
 %
 function n = nc_var_num_dims (nc, name)
+    if nargin != 2
+        print_usage ();
+    end
+
     n = length (ncdim (nc{name}));
 end

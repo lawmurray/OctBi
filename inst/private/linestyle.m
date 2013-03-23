@@ -9,17 +9,17 @@
 % Retrieve line style.
 %
 % @itemize
-% @item @var{i} (optional) Style index. If not given, all styles are returned
-% as a cell array of strings.
+% @item @var{i} (optional) Style index.
 % @end itemize
 %
-% Returns line style at given index.
+% Returns the line style of the given index. If @var{i} is not given, all
+% styles are returned as a cell array of strings.
 %
 % @end deftypefn
 %
 function s = linestyle (i)
     % check arguments
-    if (nargin > 1)
+    if nargin > 1
         print_usage ();
     end
     if nargin == 1 && !isscalar(i)

@@ -6,11 +6,12 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{c} =} fade (@var{rgb}, @var{amount})
 %
-% Fade colour.
+% Fade a colour.
 %
 % @itemize
 % @item @var{rgb} RGB triplet.
-% @item @var{amount} Amount to fade.
+%
+% @item @var{amount} Amount to fade, between 0 and 1.
 % @end itemize
 %
 % Returns colour faded by the given amount.
@@ -19,10 +20,10 @@
 %
 function c = fade (rgb, amount)
     % check arguments
-    if (nargin < 1 || nargin > 2)
+    if nargin < 1 || nargin > 2
         print_usage ();
     end
-    if (nargin < 2)
+    if nargin < 2
         amount = 1.0;
     end
     if length(rgb) != 3

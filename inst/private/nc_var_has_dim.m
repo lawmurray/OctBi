@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 1687 $
 % $Date: 2011-06-28 11:46:45 +0800 (Tue, 28 Jun 2011) $
@@ -11,9 +11,9 @@
 % @itemize
 % @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
-% @item @var{dim} Name of the dimension.
+% @item @var{dim} Dimension name.
 %
 % @end itemize
 % @end deftypefn

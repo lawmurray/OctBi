@@ -6,16 +6,16 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{args} = } get_sparse_indices (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts})
 %
-% Convert sparse to dense indices for reading variable.
+% Convert sparse to dense indices for reading from a NetCDF variable.
 %
 % @itemize
 % @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
-% @item @var{coord} (optional) Dimensions index.
+% @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time indices.
 % @end itemize

@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3064 $
 % $Date: 2012-09-09 15:01:02 +0800 (Sun, 09 Sep 2012) $

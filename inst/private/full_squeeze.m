@@ -1,12 +1,12 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev$
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {@var{X} = } full_full_squeeze (@var{X})
+% @deftypefn {Function File} {@var{X} = } full_squeeze (@var{X})
 %
-% Like standard full_squeeze(), but also converts row vectors to column vectors.
+% Like squeeze(), but also converts row vectors to column vectors.
 %
 % @end itemize
 % @end deftypefn

@@ -6,19 +6,7 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{X} = } read_var_input (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts})
 %
-% Read observation from NetCDF file.
-%
-% @itemize
-% @item @var{nc} NetCDF file handle.
-%
-% @item @var{name} Name of the variable.
-%
-% @item @var{coord} (optional) Dimensions index.
-%
-% @item @var{ps} (optional) Path indices.
-%
-% @item @var{ts} (optional) Time indices.
-% @end itemize
+% Implementation of bi_read_var() for input schema.
 % @end deftypefn
 %
 function X = read_var_input (nc, name, coord, ps, ts)
