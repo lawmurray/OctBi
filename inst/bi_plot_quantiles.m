@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3064 $
 % $Date: 2012-09-09 15:01:02 +0800 (Sun, 09 Sep 2012) $
@@ -6,18 +6,18 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {} bi_plot_quantiles (@var{file}, @var{name}, @var{coord}, @var{ps}, @var{ts}, @var{col}, @var{sty})
 %
-% Plot LibBi output. For temporal variables this plots the time marginals with
+% Plot LibBi output. For dynamic variables this plots the time marginals with
 % a bold line giving the medians, and shaded region giving the 95% credibility
 % intervals.
 %
 % @itemize
-% @item @var{file} NetCDF file.
+% @item @var{file} LibBi output file name.
 %
-% @item @var{name} Name of the variable to plot.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time indices.
 %

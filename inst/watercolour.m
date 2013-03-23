@@ -13,7 +13,7 @@
 % returned, which is useful for passing to colormap().
 % @end itemize
 %
-% Returns colour at given index.
+% Returns the colour at the given index.
 %
 % @end deftypefn
 %

@@ -6,17 +6,17 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {} bi_plot_paths (@var{file}, @var{name}, @var{coord}, @var{ps}, @var{ts}, @var{col}, @var{sty})
 %
-% Plot LibBi output. For temporal variables this plots sample trajectories as
+% Plot LibBi output. For dynamic variables this plots sample paths as
 % lines.
 %
 % @itemize
-% @item @var{file} Name of NetCDF file output by LibBi.
+% @item @var{file} LibBi output file name.
 %
-% @item @var{name} Name of the variable to plot.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time indices.
 %

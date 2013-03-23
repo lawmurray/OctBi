@@ -10,12 +10,11 @@
 % function and @var{priorparams} a cell array of its parameters.
 %
 % @itemize
-% @item @var{x} Values at which to plot prior density.
+% @item @var{x} Values at which to plot the prior density.
 %
-% @item @var{priorpdf} Name of pdf.
+% @item @var{priorpdf} Name of the pdf.
 %
-% @item @var{priorparams} Cell array of arguments to
-% @var{priorpdf}.
+% @item @var{priorparams} Cell array of arguments to @var{priorpdf}.
 %
 % @end itemize
 % @end deftypefn

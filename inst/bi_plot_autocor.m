@@ -10,9 +10,9 @@
 % samples, a useful diagnostic for MCMC mixing rate.
 %
 % @itemize
-% @item @var{file} Name of NetCDF file output by LibBi.
+% @item @var{file} LibBi output file name.
 %
-% @item @var{name} Name of the variable to plot.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %

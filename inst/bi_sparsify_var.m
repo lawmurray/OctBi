@@ -6,18 +6,18 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} bi_sparsify_var (@var{infile}, @var{outfile}, @var{name}, @var{coords}, @var{ps}, @var{ts})
 %
-% Read variable from dense NetCDF file and output to sparse NetCDF file.
+% Read a variable from a dense LibBi file and output to a sparse LibBi file.
 %
 % @itemize
-% @item @var{infile} Input NetCDF file name.
+% @item @var{infile} Input file name.
 %
-% @item @var{outfile} Output NetCDF file name.
+% @item @var{outfile} Output file name.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time indices.
 % @end itemize

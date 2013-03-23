@@ -6,24 +6,24 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {} bi_hist (@var{file}, @var{name}, @var{coord}, @var{ps}, @var{t}, @var{bins}, @var{threshold}, @var{col}, @var{sty})
 %
-% Plot LibBi output. For non-temporal variables this plots a histogram. For
-% temporal variables this plots a single time marginal as a histogram.
+% Plot LibBi output. For static variables this plots a histogram. For
+% dynamic variables this plots a single time marginal as a histogram.
 %
 % @itemize
-% @item @var{file} NetCDF file name.
+% @item @var{file} LibBi output file name.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time index. Defaults to last time.
 %
-% @item @var{bins} (optional) Number of bins. Default 20.
+% @item @var{bins} (optional) Number of bins. Defaults to 20.
 %
 % @item @var{threshold} (optional) Relative threshold on total mass for bin
-% removal at start and end. Default 5.0e-3.
+% removal at start and end. Defaults to 5.0e-3.
 %
 % @item @var{col} (optional) Colour index.
 %

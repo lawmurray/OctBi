@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3064 $
 % $Date: 2012-09-09 15:01:02 +0800 (Sun, 09 Sep 2012) $
@@ -6,16 +6,16 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{X} = } bi_read_paths (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts})
 %
-% Read paths from NetCDF file.
+% Read paths from a LibBi output file.
 %
 % @itemize
-% @item @var{file} NetCDF file name.
+% @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time indices.
 % @end itemize

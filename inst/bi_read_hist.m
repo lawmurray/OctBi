@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3064 $
 % $Date: 2012-09-09 15:01:02 +0800 (Sun, 09 Sep 2012) $
@@ -6,23 +6,23 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {[@var{xs}, @var{ns}] = } bi_read_hist (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{t}, @var{bins}, @var{threshold})
 %
-% Read histogram from NetCDF file.
+% Read and compute histogram from a LibBi output file.
 %
 % @itemize
-% @item @var{nc} NetCDF file.
+% @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{t} (optional) Time index. Defaults to last time.
 %
-% @item @var{bins} (optional) Number of bins. Default 20.
+% @item @var{bins} (optional) Number of bins. Defaults to 20.
 %
 % @item @var{threshold} (optional) Relative threshold on total mass for bin
-% removal at start and end. Default 5.0e-3.
+% removal at start and end. Defaults to 5.0e-3.
 %
 % @end itemize
 % @end deftypefn
@@ -65,7 +65,7 @@ function [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold)
     end
     
     if isempty (t)
-        t = length (nc('nr'))
+        t = length (nc('nr'));
     end
     
     % defer to implementation for schema

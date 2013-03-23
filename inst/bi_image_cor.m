@@ -4,28 +4,25 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {} image_cor (@var{in}, @var{names}, @var{coords}, @var{ps}, @var{logs})
+% @deftypefn {Function File} {} bi_image_cor (@var{file}, @var{names}, @var{coords}, @var{ps}, @var{t})
 %
-% Plot correlation matrix of samples output by mcmc program.
+% Plot LibBi output. This plots an image of the correlation matrix between
+% multiple variables.
 %
 % @itemize
-% @item @var{in} Input file. Gives the name of a NetCDF file output by
-% mcmc.
+% @item @var{file} LibBi output file name.
 %
-% @item @var{names} Cell array giving names of variables to plot.
+% @item @var{names} Cell array of variable names.
 %
-% @item @var{coords} Cell array giving coordinates of variables to plot,
-% each element matching an element of @var{names}.
+% @item @var{coords} Cell array of dimension indices.
 %
-% @item @var{ps} (optional) Vector of indices of samples to
-% include. Useful for excluding burn-in periods, for instance.
+% @item @var{ps} (optional) Sample indices.
 %
-% @item @var{logns} (optional) Vector of true/false values indicating
-% log-variables.
+% @item @var{t} (optional) Time index. Defaults to last time.
 % @end itemize
 % @end deftypefn
 %
-function image_cor_mcmc (in, names, coords, ps, logns)    
+function bi_image_cor (file, names, coords, ps, t)    
     % check arguments
     if nargin < 2 || nargin > 5
         print_usage ();
@@ -35,62 +32,50 @@ function image_cor_mcmc (in, names, coords, ps, logns)
     end
     if nargin < 4
         ps = [];
+    elseif !isempty (ps) && !isvector (ps)
+        error ('ps must be a vector');
     end
     if nargin < 5
-        logns = zeros (length(names), 1);
+       t = [];
+    elseif !isempty (t) && !isscalar (t)
+        error ('t must be a scalar');
     end
     if !(length (coords) == 0 || length(coords) == length(names))
         error ('Length of names and coords must match');
     end
     
     % input file
-    nci = netcdf(in, 'r');
+    nc = netcdf(file, 'r');
 
-    % data
-    P = length (nci('np'));
+    % defaults
+    P = length (nc('np'));
     if length (ps) == 0
         ps = [1:P];
     end
-
-    X = [];
-    names = {};
-    for i = 1:length(names)
-        name = names{i};
-        
-        if length (coords) > 0
-            coords1 = coords{i};
-            if rows (coords1) == 0
-                coords1 = zeros(1, 0);
-            end
-        else
-            coords1 = zeros(1, 0);
-        end
-        
-        for j = 1:max(1, rows(coords1))
-            coord = coords1(j,:);
-            if !check_coord (coord)
-                error ('Invalid coordinate');
-            else
-                x = read_var(nci, name, coord, ps, 1);
-                if logns (i)
-                    x = log(x);
-                end
-                X = [ X, x(:) ];
-            end
-            name = nice_name (name, coord);
-            names = { names{:}, name };
-        end
+    if isempty (t)
+        t = length (nc('nr'));
     end
-    ncclose(nci);        
-        
+
+    X = zeros (length (ps), length (names));
+    for i = 1:length (names)
+        name = names{i};
+        if length (coords) >= i
+            coord = coords{i};
+	else
+	    coord = [];
+        end
+        X(:,i) = bi_read_var (nc, name, coord, ps, t);
+    end
+    ncclose(nc);
+
     % compute correlation
-    Cor = cor(X,X);
+    C = corr(X,X);
     
     % plot
-    imagesc(Cor);
+    imagesc (C);
     set(gca, 'interpreter', 'tex');
-    set(gca, 'xtick', 1:length(names));
+    set(gca, 'xtick', 1:length (names));
     set(gca, 'xticklabel', names);
-    set(gca, 'ytick', 1:length(names));
+    set(gca, 'ytick', 1:length (names));
     set(gca, 'yticklabel', names);
 end

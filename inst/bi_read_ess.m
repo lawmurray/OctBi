@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3446 $
 % $Date: 2013-02-06 02:44:37 +0800 (Wed, 06 Feb 2013) $
@@ -6,13 +6,12 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {y = } bi_read_ess (@var{nc}, @var{ps}, @var{ts})
 %
-% Read effective sample size (ESS) at each time from the output of a particle
-% filter.
+% Read and compute effective sample size (ESS) from a LibBi output file.
 %
 % @itemize
-% @item @var{file} NetCDF file name.
+% @item @var{file} LibBi output file name.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time indices.
 % @end itemize
@@ -20,7 +19,7 @@
 %
 function y = bi_read_ess (nc, ps, ts)
     % check arguments
-    if nargin < 2 || nargin > 3
+    if nargin < 1 || nargin > 3
         print_usage ();
     end
     if nargin < 2

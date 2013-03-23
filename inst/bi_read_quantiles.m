@@ -1,4 +1,4 @@
-% Copyright (C) 2011-2013-2013
+% Copyright (C) 2011-2013
 % Author: Lawrence Murray <lawrence.murray@csiro.au>
 % $Rev: 3064 $
 % $Date: 2012-09-09 15:01:02 +0800 (Sun, 09 Sep 2012) $
@@ -6,20 +6,20 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {@var{Q} = } bi_read_quantiles (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts}, @var{qs})
 %
-% Read quantiles from NetCDF file.
+% Read and compute quantiles from a LibBi output file.
 %
 % @itemize
-% @item @var{nc} NetCDF file.
+% @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
-% @item @var{ps} (optional) Path indices.
+% @item @var{ps} (optional) Sample indices.
 %
 % @item @var{ts} (optional) Time indices.
 %
-% @item @var{qs} (optional) Quantiles.
+% @item @var{qs} (optional) Quantiles. Defaults to [0.025 0.5 0.975].
 % @end itemize
 % @end deftypefn
 %

@@ -4,14 +4,14 @@
 % $Date: 2012-09-09 15:01:02 +0800 (Sun, 09 Sep 2012) $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {@var{times} = } bi_read_times (@var{nc}, @var{name}, @var{coord}, @var{ps}, @var{ts})
+% @deftypefn {Function File} {@var{times} = } bi_read_times (@var{nc}, @var{name}, @var{coord}, @var{ts})
 %
-% Read time from a NetCDF file that is associated with some variable.
+% Read the times associated with some variable from a LibBi file.
 %
 % @itemize
-% @item @var{nc} NetCDF file name.
+% @item @var{nc} NetCDF file handle.
 %
-% @item @var{name} Name of the variable.
+% @item @var{name} Variable name.
 %
 % @item @var{coord} (optional) Dimension indices.
 %
