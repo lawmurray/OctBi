@@ -19,42 +19,41 @@ function nice = nice_name (name, coord)
     % check arguments
     if nargin < 1 || nargin > 2
         print_usage ();
-    elseif nargin == 1
+    end
+    if nargin < 2
         coord = [];
-    elseif nargin == 2 && length(coord) > 3
-        error ('coord must be vector of length zero to three');
     end
     
     % handle subscripting
     new_name = '';
     num_subscripts = 0;
-    for i = 1:length(name)
+    for i = 1:length (name)
         if (name(i) == '_')
-            new_name = strcat(new_name, '_{');
+            new_name = strcat (new_name, '_{');
             num_subscripts = num_subscripts + 1;
         else
-            new_name = strcat(new_name, name(i));
+            new_name = strcat (new_name, name(i));
         end
     end
     for i = 1:num_subscripts
-        new_name = strcat(new_name, '}');
+        new_name = strcat (new_name, '}');
     end
 
     % handle greek letters
-    nice = strcat('{', nice_greek (new_name));
+    nice = strcat ('{', nice_greek (new_name));
   
     % handle coordinates
-    if length(coord) > 0
-        nice = strcat(nice, '(');
+    if length (coord) > 0
+        nice = strcat (nice, '(');
     end
-    for i = 1:length(coord)
-        nice = strcat(nice, num2str(coord(i)));
-        if i != length(coord)
-            nice = strcat(nice, ',');
+    for i = 1:length (coord)
+        nice = strcat (nice, num2str (coord(i)));
+        if i != length (coord)
+            nice = strcat (nice, ',');
         end
     end
-    if length(coord) > 0
-        nice = strcat(nice, ')');
+    if length (coord) > 0
+        nice = strcat (nice, ')');
     end
-    nice = strcat(nice, '}');
+    nice = strcat (nice, '}');
 end
