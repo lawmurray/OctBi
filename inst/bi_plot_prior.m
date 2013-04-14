@@ -29,5 +29,5 @@ function bi_plot_prior (x, priorpdf, priorparams)
     y = feval(priorpdf, x, priorparams{:});
         
     % plot
-    plot(x, y, 'linewidth', 3, 'color', gray()(48,:));
+    plot(x, y, 'linewidth', 2, 'color', gray()(48,:));
 end

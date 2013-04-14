@@ -49,7 +49,7 @@ function bi_image_cor (file, names, coords, ps, t)
 
     % defaults
     P = length (nc('np'));
-    if length (ps) == 0
+    if isempty (ps)
         ps = [1:P];
     end
     if isempty (t)

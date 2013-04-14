@@ -41,7 +41,7 @@ function style = get_style (col, sty, file, name)
     gr = gray()(40,:);
     
     % global defaults
-    style.linewidth = 3;
+    style.linewidth = 2;
     
     % schema defaults
     if !isempty (file) && !isempty (name)
@@ -60,7 +60,7 @@ function style = get_style (col, sty, file, name)
             % probably an input file, assume obs
             style.linestyle = 'none';
             style.marker = 'o';
-            style.markersize = 3;
+            style.markersize = 2;
             style.markerfacecolor = 'w';
             style.markeredgecolor = 'k';
         end

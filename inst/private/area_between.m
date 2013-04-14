@@ -50,5 +50,5 @@ function area_between (x, y1, y2, c, fd, alpha)
     % ^ flipud orders points clockwise so that correct faces are shaded
         
     bg = fade(c, fd);
-    patch(a, b, bg, 'linewidth', 1, 'edgecolor', c, 'facealpha', alpha);
+    patch(a, b, bg, 'linewidth', 0.5, 'edgecolor', c, 'edgealpha', 0, 'facealpha', alpha);
 end

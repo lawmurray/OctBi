@@ -21,10 +21,11 @@ function ss = ess (lws)
     if !isvector (lws)
         error ('lws must be a vector');
     end
+    lws = reshape(lws, length (lws), 1);
   
-    mx = max(lws');
+    mx = max(lws);
     ws = exp (lws - max (lws));
-    num = sum (ws, 2).^2;
-    den = sum (ws.^2, 2);
+    num = sum (ws).^2;
+    den = sum (ws.^2);
     ss = num./den;
 end
