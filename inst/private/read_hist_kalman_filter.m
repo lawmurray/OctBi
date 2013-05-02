@@ -20,7 +20,7 @@ function [xs, ns] = read_hist_kalman_filter (nc, name, coord, ps, t, bins, thres
     ix = coord2serial (nc, name, coord);
     id = nc{strcat('index.', name)}(:) + ix;
     mu = bi_read_var (nc, name, coord, ps, t);
-    rs = full_squeeze(nc{'S_'}(t,id,:));
+    rs = full_squeeze(nc{'U_'}(t,id,:));
     sigma = sqrt(rs'*rs);
     
     % construct histogram
