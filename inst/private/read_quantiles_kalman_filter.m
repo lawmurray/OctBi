@@ -21,7 +21,7 @@ function Q = read_quantiles_kalman_filter (nc, name, coord, ps, ts, qs)
     for t = 1:length (ts)
         id = nc{strcat('index.', name)}(:) + ix;
         mu = bi_read_var (nc, name, coord, ps, ts(t));
-        rs = full_squeeze(nc{'U_'}(ts(t),id,:));
+        rs = full_squeeze(nc{'U2_'}(ts(t),id,:));
         sigma = sqrt(rs'*rs);
         if sigma > 0
             Q(t,:) = norminv(qs, mu, sigma);
