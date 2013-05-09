@@ -44,7 +44,7 @@ function style = get_style (col, sty, file, name)
     style.linewidth = 2;
     
     % schema defaults
-    if !isempty (file) && !isempty (name)
+    if !isempty (file) && !isempty (name) && isempty (col) && isempty (sty)
         nc = netcdf (file, 'r');
 
         switch nc.libbi_schema

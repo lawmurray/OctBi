@@ -45,10 +45,11 @@ function area_between (x, y1, y2, c, fd, alpha)
     end
     
     % plot
-    a = flipud([vec(x); vec(x(end:-1:1))]);
-    b = flipud([vec(y1); vec(y2(end:-1:1))]);
+    a = flipud([vec(x); vec(x(end:-1:1)); x(1)]);
+    b = flipud([vec(y1); vec(y2(end:-1:1)); y1(1) ]);
     % ^ flipud orders points clockwise so that correct faces are shaded
         
     bg = fade(c, fd);
-    patch(a, b, bg, 'linewidth', 0.5, 'edgecolor', c, 'edgealpha', 0, 'facealpha', alpha);
+    patch(a, b, bg, 'linewidth', 0.5, 'edgecolor', c, 'edgealpha', 0,
+        'facealpha', alpha);
 end
