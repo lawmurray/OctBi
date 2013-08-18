@@ -58,10 +58,8 @@ function X = read_var_simulator (nc, name, coord, ps, ts)
     if nc_var_has_dim (nc, name, 'nr')
         args{length (args) + 1} = ts;
     end
-    if length (coord) > 0
-        from = length (args) + 1;
-        to = from + length (coord) - 1;
-        args{from:to} = num2cell (coord){:};
+    for i = 1:length (coord)
+        args{length (args) + 1} = coord(i);
     end
     if nc_var_has_dim (nc, name, 'np')
         args{length (args) + 1} = ps;

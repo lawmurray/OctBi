@@ -87,10 +87,8 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
                 args{length (args) + 1} = ts;
             end
         end
-        if length (coord) > 0
-            from = length (args) + 1;
-            to = from + length (coord) - 1;
-            args{from:to} = num2cell (coord){:};
+        for i = 1:length (coord)
+            args{length (args) + 1} = coord(i);
         end
     else
         if length (coord) > 0
