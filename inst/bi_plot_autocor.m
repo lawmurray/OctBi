@@ -24,7 +24,7 @@
 % @end itemize
 % @end deftypefn
 %
-function bi_plot_trace (file, name, coord, ps, col, sty)
+function bi_plot_autocor (file, name, coord, ps, col, sty)
     % check arguments
     if nargin < 2 || nargin > 6
         print_usage ();
