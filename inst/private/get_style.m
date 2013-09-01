@@ -70,6 +70,8 @@ function style = get_style (col, sty, file, name)
         case {'ParticleFilter'; 'FlexiParticleFilter'; 'KalmanFilter';
             'ParticleMCMC'; 'SMC2'}
             style.color = watercolour (1);
+        case {'Optimiser'}
+            style.color = watercolour (3);
         otherwise
             % probably an input file, assume obs
             style.linestyle = 'none';
