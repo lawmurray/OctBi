@@ -6,8 +6,9 @@
 % -*- texinfo -*-
 % @deftypefn {Function File} {} bi_plot_trace (@var{file}, @var{name}, @var{coord}, @var{ps}, @var{t}, @var{col}, @var{sty})
 %
-% Plot LibBi output. This plots a trace of samples, typically used to visualise
-% the mixing of an MCMC algorithm.
+% Plot LibBi output. This plots a trace of samples, typically used to
+% visualise the mixing of an MCMC algorithm or convergence of an optimisation
+% algorithm.
 %
 % @itemize
 % @item @var{file} LibBi output file name.
