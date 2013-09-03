@@ -1,10 +1,12 @@
 Name: OctBi
 Version: 1.0.0
-Date: $Date$
+Date: 15 August 2013
 Author: Lawrence Murray <lawrence.murray@csiro.au>
 Maintainer: Lawrence Murray <lawrence.murray@csiro.au>
 Title: Analysis and visualisation of LibBi output files.
 Description: Analysis and visualisation of LibBi output files.
-Categories: libbi
+Categories: LibBi
+Url: http://www.libbi.org/related.html
 Autoload: on
 Depends: octcdf
+License: CSIRO Open Source Software License (GPL)
