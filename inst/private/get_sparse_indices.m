@@ -105,4 +105,8 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
             end
         end
     end
+    
+    if nc_var_has_dim (nc, name, 'np')
+        args{length (args) + 1} = ps;
+    end
 end
