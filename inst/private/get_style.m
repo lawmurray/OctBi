@@ -42,6 +42,7 @@ function style = get_style (col, sty, file, name)
     
     % global defaults
     style.linewidth = 2;
+    style.color = gr;
     
     % schema defaults
     if !isempty (file) && !isempty (name) && isempty (col) && isempty (sty)
