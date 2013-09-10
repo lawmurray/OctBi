@@ -64,7 +64,7 @@ function bi_plot_quantiles (file, name, coord, ps, ts, col, sty)
     nc = netcdf (file, 'r');
     
     % data
-    times = bi_read_times (nc, name, ts);
+    times = bi_read_times (nc, name, coord, ts);
     qs = [0.025 0.5 0.975]';
     Q = bi_read_quantiles (nc, name, coord, ps, ts, qs);
     
