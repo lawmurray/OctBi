@@ -71,7 +71,7 @@ function bi_image_density (file, name, coord, ps, ts, res)
     nn = histc(X, xs, 2)';
     NN = max(nn, [], 1);
     nn = nn./repmat(NN, rows(nn), 1);
-    imagesc(nn);
+    imagesc(times(:), xs(:), nn);
     
     ncclose (nc);
 end
