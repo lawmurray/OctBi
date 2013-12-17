@@ -72,6 +72,7 @@ function bi_image_density (file, name, coord, ps, ts, res)
     NN = max(nn, [], 1);
     nn = nn./repmat(NN, rows(nn), 1);
     imagesc(times(:), xs(:), nn);
-    
+    set(gca(), 'ydir', 'normal');
+
     ncclose (nc);
 end
