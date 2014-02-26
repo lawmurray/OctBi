@@ -19,8 +19,8 @@ function ss = ess (lws)
         print_usage ();
     end
   
-    mx = max (lws);
-    ws = exp (lws - mx);
+    mx = max (lws, [], 1);
+    ws = exp (lws - repmat(mx, rows(lws), 1));
     num = sum (ws).^2;
     den = sum (ws.^2);
     ss = num./den;
