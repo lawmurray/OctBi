@@ -4,7 +4,7 @@
 % $Date$
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {} bi_plot_autocor (@var{file}, @var{name}, @var{coord}, @var{ps}, @var{col}, @var{sty})
+% @deftypefn {Function File} {} bi_plot_autocor (@var{file}, @var{name}, @var{coord}, @var{ps}, @var{lags}, @var{col}, @var{sty})
 %
 % Plot LibBi output. For sampling output this plots the autocorrelation across
 % samples, a useful diagnostic for MCMC mixing rate.
@@ -18,15 +18,18 @@
 %
 % @item @var{ps} (optional) Sample indices.
 %
+% @item @var{lags} (optional) Range of lags for which to compute
+% autocorrelation.
+%
 % @item @var{col} (optional) Colour index.
 %
 % @item @var{sty} (optional) Style index.
 % @end itemize
 % @end deftypefn
 %
-function bi_plot_autocor (file, name, coord, ps, col, sty)
+function bi_plot_autocor (file, name, coord, ps, lags, col, sty)
     % check arguments
-    if nargin < 2 || nargin > 6
+    if nargin < 2 || nargin > 7
         print_usage ();
     end
     if !ischar (file)
@@ -46,9 +49,12 @@ function bi_plot_autocor (file, name, coord, ps, col, sty)
         error ('ps must be a vector');
     end
     if nargin < 5
-        col = [];
+        lags = [];
     end
     if nargin < 6
+        col = [];
+    end
+    if nargin < 7
         sty = [];
     end
 
@@ -61,11 +67,23 @@ function bi_plot_autocor (file, name, coord, ps, col, sty)
     
     % data
     X = bi_read_paths (nc, name, coord, ps);
-
+    if isempty (lags)
+        lags = 1:length(X);
+    end
+    
+    N = length(X);
+    mu = mean(X(:));
+    X = X - mu;
+    A = zeros(length(lags), 1);
+    for i = 1:length(lags)
+        l = lags(i);
+        A(i) = X(1:(end-l))'*X((l+1):end)./N;
+    end
+    
     % plot
     style = get_style (col, sty, file, name);
     style.linewidth = 1;
-    plot (ps, autocor (X), struct2options (style){:});
+    plot (lags, A, struct2options (style){:}, 'linewidth', 3);
     
     ncclose (nc);
 end
