@@ -73,11 +73,12 @@ function bi_plot_autocor (file, name, coord, ps, lags, col, sty)
     
     N = length(X);
     mu = mean(X(:));
+    sigma2 = var(X(:));
     X = X - mu;
     A = zeros(length(lags), 1);
     for i = 1:length(lags)
         l = lags(i);
-        A(i) = X(1:(end-l))'*X((l+1):end)./N;
+        A(i) = (X(1:(end-l))'*X((l+1):end)./N)./sigma2;
     end
     
     % plot
