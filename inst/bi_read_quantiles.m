@@ -68,7 +68,7 @@ function Q = bi_read_quantiles (nc, name, coord, ps, ts, qs)
     
     % defer to implementation for schema
     switch nc.libbi_schema
-    case {"ParticleFilter", "FlexiParticleFilter", "SMC2"}
+    case {"ParticleFilter", "FlexiParticleFilter", "SMC", "SMC2"}
         f = @read_quantiles_particle_filter;
     case {"KalmanFilter"}
         f = @read_quantiles_kalman_filter;

@@ -69,7 +69,7 @@ function style = get_style (col, sty, file, name)
                 style.color = gr;
             end
         case {'ParticleFilter'; 'FlexiParticleFilter'; 'KalmanFilter';
-            'ParticleMCMC'; 'SMC2'}
+            'ParticleMCMC'; 'MCMC'; 'SMC2'; 'SMC'}
             style.color = watercolour (1);
         case {'Optimiser'}
             style.color = watercolour (3);
