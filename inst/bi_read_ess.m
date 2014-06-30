@@ -31,7 +31,7 @@ function y = bi_read_ess (nc, ps, ts)
 
     % default sizes
     if nc_has_dim (nc, 'nr')
-        T = length (nc('nr'));
+        T = nc_dim_size (nc, 'nr');
     else
         T = 1;
     end

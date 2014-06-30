@@ -46,24 +46,27 @@ function style = get_style (col, sty, file, name)
     
     % schema defaults
     if !isempty (file) && !isempty (name) && isempty (col) && isempty (sty)
-        nc = netcdf (file, 'r');
-
-        switch nc.libbi_schema
+        try
+            schema = ncreadatt (file, '/', 'libbi_schema');
+        catch
+            schema = '';
+        end
+        switch schema
         case {'Simulator'}
-            if nc_has_dim (nc, 'np') && length (nc('np')) == 1
+            if nc_has_dim (file, 'np') && nc_dim_size (file, 'np') == 1
 	        % treat as simulated obs file
                 style.linestyle = 'none';
                 style.marker = 'o';
                 style.markersize = 2;
                 style.markerfacecolor = 'w';
                 style.markeredgecolor = 'k';
-            elseif nc{'time'}(1) > 0
+            elseif ncread (file, 'time', 1, 1) > 0
                 style.color = watercolour (2);
             else
                 style.color = gr;
             end
         case {'FlexiSimulator'}
-            if nc{'time'}(1) > 0
+            if ncread (file, 'time', 1, 1) > 0
                 style.color = watercolour (2);
             else
                 style.color = gr;

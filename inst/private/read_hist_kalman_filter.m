@@ -18,9 +18,9 @@ function [xs, ns] = read_hist_kalman_filter (nc, name, coord, ps, t, bins, thres
     
     % mean and std dev
     ix = coord2serial (nc, name, coord);
-    id = nc{strcat('index.', name)}(:) + ix;
+    id = ncread(nc, strcat('index.', name)) + ix;
     mu = bi_read_var (nc, name, coord, ps, t);
-    rs = full_squeeze(nc{'U2_'}(t,id,:));
+    rs = full_squeeze(ncread(nc, 'U2_')(t,id,:));
     sigma = sqrt(rs'*rs);
     
     % construct histogram

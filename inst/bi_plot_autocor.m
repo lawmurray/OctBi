@@ -59,14 +59,13 @@ function bi_plot_autocor (file, name, coord, ps, lags, col, sty)
     end
 
     % input file
-    nc = netcdf (file, 'r');
-    P = length (nc('np'));
+    P = nc_dim_size(file, 'np');
     if isempty (ps)
         ps = [1:P];
     end
     
     % data
-    X = bi_read_paths (nc, name, coord, ps);
+    X = bi_read_paths (file, name, coord, ps);
     if isempty (lags)
         lags = 1:length(X);
     end
@@ -85,6 +84,4 @@ function bi_plot_autocor (file, name, coord, ps, lags, col, sty)
     style = get_style (col, sty, file, name);
     style.linewidth = 1;
     plot (lags, A, struct2options (style){:}, 'linewidth', 3);
-    
-    ncclose (nc);
 end

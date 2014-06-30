@@ -64,5 +64,5 @@ function X = read_var_simulator (nc, name, coord, ps, ts)
     if nc_var_has_dim (nc, name, 'np')
         args{length (args) + 1} = ps;
     end
-    X = full_squeeze(nc{name}(args{:}));
+    X = full_squeeze(ncread(file, name)(args{:}));
 end

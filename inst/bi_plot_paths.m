@@ -59,17 +59,12 @@ function bi_plot_paths (file, name, coord, ps, ts, col, sty)
         sty = [];
     end
 
-    % input file
-    nc = netcdf (file, 'r');
-    
     % data
-    times = bi_read_times (nc, name, coord, ts);
-    X = bi_read_paths (nc, name, coord, ps, ts);
+    times = bi_read_times (file, name, coord, ts);
+    X = bi_read_paths (file, name, coord, ps, ts);
     
     % plot
     style = get_style (col, sty, file, name);
     style.linewidth = 1;
     plot (times, X, struct2options (style){:});
-    
-    ncclose (nc);
 end

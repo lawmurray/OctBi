@@ -61,8 +61,7 @@ function bi_plot_trace (file, name, coord, ps, t, col, sty)
     end
 
     % input file
-    nc = netcdf (file, 'r');
-    P = length (nc('np'));
+    P = nc_dim_size (file, 'np');
     if isempty (ps)
         ps = [1:P];
     end
@@ -74,6 +73,4 @@ function bi_plot_trace (file, name, coord, ps, t, col, sty)
     style = get_style (col, sty, file, name);
     style.linewidth = 1;
     plot (ps, X, struct2options (style){:});
-    
-    ncclose (nc);
 end

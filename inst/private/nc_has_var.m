@@ -22,9 +22,9 @@ function check = nc_has_var (nc, name)
     end
 
     check = 0;
-    vars = ncvar (nc);
+    vars = ncinfo (nc).Variables;
     for i = 1:length (vars)
-        if strcmp (name, ncname (vars{i}))
+        if strcmp (name, vars(i).Name)
             check = 1;
         end
     end

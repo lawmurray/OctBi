@@ -41,16 +41,11 @@ function bi_plot_ess (file, ps, ts, col, sty)
         sty = [];
     end
     
-    % input file
-    nc = netcdf(file, 'r');
-
     % data
-    times = bi_read_times (nc, 'logweight', ps, ts);
-    x = bi_read_ess (nc, ps, ts);
+    times = bi_read_times (file, 'logweight', ps, ts);
+    x = bi_read_ess (file, ps, ts);
 
     % plot
     style = get_style (col, sty, file, 'logweight');
     plot (times, x, struct2cell (style){:});
-    
-    ncclose (nc);
 end

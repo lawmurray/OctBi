@@ -20,11 +20,10 @@ function sz = nc_var_size (nc, name)
         print_usage ();
     end
 
-    dims = ncdim (nc{name});
+    dims = ncinfo (nc, name).Dimensions;
     N = length (dims);
-    sz = zeros (N,1);
-    
+    sz = zeros (N,1);    
     for i = 1:N
-        sz(i) = dims(i){1}(:);
+        sz(i) = dims(i).Length;
     end
 end

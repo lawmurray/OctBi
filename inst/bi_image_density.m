@@ -52,12 +52,9 @@ function bi_image_density (file, name, coord, ps, ts, res)
         res = [];
     end
 
-    % input file
-    nc = netcdf (file, 'r');
-    
     % data
-    times = bi_read_times (nc, name, coord, ts);
-    X = bi_read_paths (nc, name, coord, ps, ts);
+    times = bi_read_times (file, name, coord, ts);
+    X = bi_read_paths (file, name, coord, ps, ts);
     if isempty(res)
         res = floor(sqrt(columns(X)));
     end
@@ -73,6 +70,4 @@ function bi_image_density (file, name, coord, ps, ts, res)
     nn = nn./repmat(NN, rows(nn), 1);
     imagesc(times(:), xs(:), nn);
     set(gca(), 'ydir', 'normal');
-
-    ncclose (nc);
 end

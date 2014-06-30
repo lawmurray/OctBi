@@ -47,7 +47,7 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
     
     % check dimensions
     if nc_var_has_dim (nc, name, 'np')
-        P = length (nc('np'));
+        P = nc_dim_size (nc, 'np');
     else
         P = 1;
     end    
@@ -63,11 +63,11 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
     
     if !dense
         if length (coord) > 0
-            ndims = length (ncdim (nc{name}));
+            ndims = nc_var_num_dims (nc, name);
             if ndims == 1
-                coords = nc{cvar}(:);
+                coords = ncread (nc, cvar);
             elseif ndims == 2
-                coords = nc{cvar}(:,:);
+                coords = ncread (nc, cvar);
             else
                 error (sprintf ('Variable %s has too many dimensions', cvar));
             end
@@ -81,7 +81,7 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
     if dense
         if has_tdim
             if isempty (ts)
-                T = length (nc(tdim));
+                T = nc_dim_size (nc, tdim);
                 args{length (args) + 1} = [1:T];
             else
                 args{length (args) + 1} = ts;

@@ -41,14 +41,12 @@ function X = bi_sparsify_var (infile, outfile, name, coords, ps, ts)
     end
     
     % input file
-    nci = netcdf (infile, 'r');
-    
-    P = nci('np')(:);
+    P = nc_dim_size(infile, 'np');
     if isempty (ps)
         ps = [1:P];
     end
     
-    T = nci('nr')(:);
+    T = nc_dim_size(infile, 'nr');
     if isempty (ts)
         ts = [1:T];
     end
@@ -59,29 +57,23 @@ function X = bi_sparsify_var (infile, outfile, name, coords, ps, ts)
         ncoords = rows (coords);
     end
     
-    % output file
-    if exist (outfile, "file")
-        nco = netcdf (outfile, 'w');
-    else
-        nco = netcdf (outfile, 'c', '64bit-offset');
-    end
-
     % dimensions
     rdim = sprintf ('nr_%s', name);
     cdim = sprintf ('nc_%s', name);
-    
-    nco(rdim) = ncoords*length (ts);
+    rdim_size = ncoords*length (ts);
+    cdim_size = 0;
     if columns (coords) > 1
-        nco(cdim) = columns (coords);
+        cdim_size = columns (coords);
     end
-    if !nc_has_dim (nco, 'np') && length (ps) > 1
-        nco('np') = length (ps);
+    npdim_size = 0;
+    if length (ps) > 1
+        npdim_size = length (ps);
     end
     
     % time variable
     tvar = sprintf ('time_%s', name);
-    nco{tvar} = ncdouble (rdim);
-    nco{tvar}(:) = repmat (nci{'time'}(ts)', ncoords, 1)(:);
+    nccreate (outfile, tvar, 'Dimensions', { rdim, rdim_size });
+    ncwrite (outfile, tvar, repmat (ncread(infile, 'time')(ts), ncoords, 1)(:));
     
     % coordinate variable
     % (note -1 to convert base one indices for Octave to base zero for LibBi)

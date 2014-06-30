@@ -40,9 +40,14 @@ function X = bi_read_var (nc, name, coord, ps, ts)
     end
     
     % defer to implementation for file schema
+    try
+        schema = ncreadatt (nc, '/', 'libbi_schema');
+    catch
+        schema = '';
+    end
     if nc_var_has_dim (nc, name, 'nrp')
         f = @read_var_flexi_simulator;
-    elseif isempty (nc.libbi_schema)
+    elseif isempty (schema)
         f = @read_var_input;
     else
         f = @read_var_simulator;

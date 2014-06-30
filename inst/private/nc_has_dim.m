@@ -22,9 +22,9 @@ function check = nc_has_dim (nc, dim)
     end
 
     check = 0;
-    dims = ncdim (nc);
+    dims = ncinfo (nc).Dimensions;
     for i = 1:length (dims)
-        if strcmp (dim, ncname (dims{i}))
+        if strcmp (dim, dims(i).Name)
             check = 1;
         end
     end

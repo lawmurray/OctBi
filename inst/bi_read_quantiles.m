@@ -54,7 +54,7 @@ function Q = bi_read_quantiles (nc, name, coord, ps, ts, qs)
     
     % default sizes
     if nc_has_dim (nc, 'nr')
-        T = length (nc('nr'));
+        T = nc_dim_size (nc, 'nr');
     else
         T = 1;
     end
@@ -67,10 +67,15 @@ function Q = bi_read_quantiles (nc, name, coord, ps, ts, qs)
     end
     
     % defer to implementation for schema
-    switch nc.libbi_schema
-    case {"ParticleFilter", "FlexiParticleFilter", "SMC", "SMC2"}
+    try
+        schema = ncreadatt (file, '/', 'libbi_schema');
+    catch
+        schema = '';
+    end
+    switch schema
+    case {'ParticleFilter', 'FlexiParticleFilter', 'SMC', 'SMC2'}
         f = @read_quantiles_particle_filter;
-    case {"KalmanFilter"}
+    case {'KalmanFilter'}
         f = @read_quantiles_kalman_filter;
     otherwise
         f = @read_quantiles_simulator;

@@ -11,12 +11,12 @@
 %
 function times = read_times_simulator (nc, name, coord, ts)
     if nc_var_has_dim (nc, 'time', 'nr')
-        T = length (nc('nr'));
+        T = nc_dim_size (nc, 'nr');
     else
         T = 1;
     end
     if isempty (ts)
         ts = [1:T];
     end
-    times = nc{'time'}(ts);
+    times = ncread (nc, 'time')(ts);
 end

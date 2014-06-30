@@ -4,9 +4,9 @@
 % $Date: 2011-06-28 11:46:45 +0800 (Tue, 28 Jun 2011) $
 
 % -*- texinfo -*-
-% @deftypefn {Function File} {@var{n} = } nc_var_num_dims (@var{nc}, @var{name})
+% @deftypefn {Function File} {@var{sz} = } nc_var_size (@var{nc}, @var{name})
 %
-% Get the number of dimensions for a NetCDF variable.
+% Get dimension sizes for a NetCDF variable.
 %
 % @itemize
 % @item @var{nc} NetCDF file handle.
@@ -15,10 +15,15 @@
 % @end itemize
 % @end deftypefn
 %
-function n = nc_var_num_dims (nc, name)
+function sz = nc_dim_size (nc, name)
     if nargin != 2
         print_usage ();
     end
 
-    n = length (ncinfo (nc, name).Dimensions);
+    dims = ncinfo (nc).Dimensions;
+    for i = 1:length (dims)
+        if strcmp (name, dims(i).Name)
+            sz = dims(i).Length;
+        end
+    end
 end

@@ -44,16 +44,13 @@ function bi_image_cor (file, names, coords, ps, t)
         error ('Length of names and coords must match');
     end
     
-    % input file
-    nc = netcdf(file, 'r');
-
     % defaults
-    P = length (nc('np'));
+    P = nc_dim_size (file, 'np');
     if isempty (ps)
         ps = [1:P];
     end
     if isempty (t)
-        t = length (nc('nr'));
+        t = nc_dim_size (file, 'nr');
     end
 
     X = zeros (length (ps), length (names));
@@ -64,9 +61,8 @@ function bi_image_cor (file, names, coords, ps, t)
 	else
 	    coord = [];
         end
-        X(:,i) = bi_read_var (nc, name, coord, ps, t);
+        X(:,i) = bi_read_var (file, name, coord, ps, t);
     end
-    ncclose(nc);
 
     % compute correlation
     C = corr(X,X);

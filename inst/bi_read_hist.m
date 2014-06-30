@@ -69,7 +69,12 @@ function [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold)
     end
     
     % defer to implementation for schema
-    switch nc.libbi_schema
+    try
+        schema = ncreadatt (file, '/', 'libbi_schema');
+    catch
+        schema = '';
+    end
+    switch schema
     case {'ParticleFilter'; 'FlexiParticleFilter'; 'SMC'; 'SMC2'}
         f = @read_hist_particle_filter;
     case {'KalmanFilter'}

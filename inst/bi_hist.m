@@ -59,16 +59,11 @@ function bi_hist (file, name, coord, ps, t, bins, threshold, col, sty)
         sty = [];
     end
     
-    % input file
-    nc = netcdf (file, 'r');
-    
     % read
-    [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold);
-                  
+    [xs, ns] = bi_read_hist (file, name, coord, ps, t, bins, threshold);
+
     % plot
     style = get_style (col, sty, file, name);
     h = bar(xs, ns, 1.0); % normalised histogram
     set(h, 'facecolor', fade(style.color, 0.3), 'edgecolor', style.color);
-    
-    ncclose (nc);
 end

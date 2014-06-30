@@ -35,7 +35,12 @@ function times = bi_read_times (nc, name, coord, ts)
     end
     
     % defer to implementation for schema
-    switch nc.libbi_schema
+    try
+        schema = ncreadatt (nc, '/', 'libbi_schema');
+    catch
+        schema = '';
+    end
+    switch schema
     case {'Simulator'; 'FlexiSimulator'; 'ParticleFilter';
         'FlexiParticleFilter'; 'KalmanFilter'; 'MCMC'; 'ParticleMCMC'; 'SMC';
         'SMC2'}
