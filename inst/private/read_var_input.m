@@ -14,5 +14,5 @@ function X = read_var_input (nc, name, coord, ps, ts)
     if nc_var_has_dim (nc, name, 'ns')
         args = {1; args{:}};
     end
-    X = full_squeeze (ncread (nc, name)(args{:}));
+    X = full_squeeze (ncread (nc, name)(args{end:-1:1}));
 end

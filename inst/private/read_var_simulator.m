@@ -36,7 +36,7 @@ function X = read_var_simulator (nc, name, coord, ps, ts)
     
     % check dimensions
     if nc_var_has_dim (nc, name, 'np')
-        P = length (nc('np'));
+        P = nc_dim_size (nc, 'np');
     else
         P = 1;
     end    
@@ -45,7 +45,7 @@ function X = read_var_simulator (nc, name, coord, ps, ts)
     end
     
     if nc_var_has_dim (nc, name, 'nr')
-        T = length (nc('nr'));
+        T = nc_dim_size (nc, 'nr');
     else
         T = 1;
     end
@@ -64,5 +64,5 @@ function X = read_var_simulator (nc, name, coord, ps, ts)
     if nc_var_has_dim (nc, name, 'np')
         args{length (args) + 1} = ps;
     end
-    X = full_squeeze(ncread(file, name)(args{:}));
+    X = full_squeeze(ncread(nc, name)(args{end:-1:1}));
 end

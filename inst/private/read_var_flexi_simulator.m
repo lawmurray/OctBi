@@ -64,6 +64,6 @@ function X = read_var_flexi_simulator (nc, name, coord, ps, ts)
         if nc_var_has_dim (nc, name, 'nrp')
             args{length (args) + 1} = starts(t) + ps;
         end
-        X(:,t) = full_squeeze(ncread(file, name)(args{:}))(:);
+        X(:,t) = full_squeeze(ncread(file, name)(args{end:-1:1}))(:);
     end
 end

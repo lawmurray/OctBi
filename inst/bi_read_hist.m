@@ -65,7 +65,7 @@ function [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold)
     end
     
     if isempty (t)
-        t = length (nc('nr'));
+        t = nc_dim_size (nc, 'nr');
     end
     
     % defer to implementation for schema
