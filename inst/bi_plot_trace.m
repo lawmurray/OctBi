@@ -67,7 +67,7 @@ function bi_plot_trace (file, name, coord, ps, t, col, sty)
     end
     
     % data
-    X = bi_read_paths (nc, name, coord, ps, t);
+    X = bi_read_paths (file, name, coord, ps, t);
 
     % plot
     style = get_style (col, sty, file, name);
