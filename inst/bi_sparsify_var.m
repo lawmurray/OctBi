@@ -73,41 +73,38 @@ function X = bi_sparsify_var (infile, outfile, name, coords, ps, ts)
     % time variable
     tvar = sprintf ('time_%s', name);
     nccreate (outfile, tvar, 'Dimensions', { rdim, rdim_size });
-    ncwrite (outfile, tvar, repmat (ncread(infile, 'time')(ts), ncoords, 1)(:));
+    ncwrite (outfile, tvar, repmat (ncread(infile, 'time')(ts)', ncoords, 1)(:));
     
     % coordinate variable
     % (note -1 to convert base one indices for Octave to base zero for LibBi)
     cvar = sprintf ('coord_%s', name);
     if columns (coords) > 1
-        nco{cvar} = ncdouble (rdim, cdim);
-        nco{cvar}(:,:) = repmat (coords - 1, length (ts), 1);
+        nccreate (outfile, cvar, 'Dimensions', { rdim, cdim });
+        ncwrite (outfile, cvar, repmat (coords - 1, length (ts), 1));
     elseif columns (coords) > 0
-        nco{cvar} = ncdouble(rdim);
-        nco{cvar}(:) = repmat (coords(:) - 1, length (ts), 1);
+        nccreate (outfile, cvar, 'Dimensions', { rdim });
+        ncwrite (outfile, cvar, repmat (coords(:) - 1, length (ts), 1));
     end
     
     % construct data
     if length (ps) > 1
-        nco{name} = ncdouble (rdim, 'np');
+        nccreate (outfile, name, 'Dimensions', { rdim, 'np' });
     else
-        nco{name} = ncdouble (rdim);
+        nccreate (outfile, name, 'Dimensions', { rdim });
     end
     for t = 1:length (ts)
         for j = 1:ncoords
             if columns (coords) > 0
                 coord = coords(j,:);
-                x = bi_read_var (nci, name, coord, ps, ts(t));
+                x = bi_read_var (infile, name, coord, ps, ts(t));
             else
-                x = bi_read_var (nci, name, [], ps, ts(t));
+                x = bi_read_var (infile, name, [], ps, ts(t));
             end
             if length (ps) > 1
-                nco{name}((t - 1)*ncoords + j,:) = x;
+                ncwrite (outfile, name, x, [(t - 1)*ncoords + j, 1]);
             else
-                nco{name}((t - 1)*ncoords + j) = x;
+                ncwrite (outfile, name, x, (t - 1)*ncoords + j);
             end
         end
     end
-    
-    ncclose (nci);
-    ncclose (nco);
 end
