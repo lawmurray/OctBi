@@ -24,11 +24,11 @@ function [xs, ns] = read_hist_simulator (nc, name, coord, ps, t, bins, threshold
     
     % clean up outlier bins from either end
     mask = nn > threshold*length (x);
-    found = find (mask, length (mask), "first");
+    found = find (mask, length (mask), 'first');
     if length (found) > 1
         % have outliers
         first = found(1);
-        last = find (mask, length (mask), "last")(end);
+        last = find (mask, length (mask), 'last')(end);
         if last == first
             last = last + 1;
         end

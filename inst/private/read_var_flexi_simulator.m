@@ -45,11 +45,11 @@ function X = read_var_flexi_simulator (nc, name, coord, ps, ts)
     if isempty (ps)
         ps = [1:minN];
         if max (lens) < minN
-            warn (sprintf ("The number of samples at each time differs, so reading %d, the smallest", minN));
+            warn (sprintf ('The number of samples at each time differs, so reading %d, the smallest', minN));
         end
     else
         if minN < max (ps)
-            warn (sprintf ("Some times have less than %d samples, so using only this many at each time", minN));
+            warn (sprintf ('Some times have less than %d samples, so using only this many at each time', minN));
             ps = find (ps <= minN);
         end
     end

@@ -39,9 +39,6 @@ function y = bi_read_ess (nc, ps, ts)
         ts = [1:T];
     end
     
-    for t = 1:length (ts)
-        lws = bi_read_var (nc, 'logweight', [], ps, ts(t));
-        x{t} = ess (lws);
-    end
-    y = cell2mat (x);
+    lws = bi_read_var (nc, 'logweight', [], ps, ts);
+    y = ess (lws);
 end
