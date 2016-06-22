@@ -15,13 +15,13 @@
 %
 function ss = car (lws)
     % check arguments
-    if nargin != 1
+    if nargin ~= 1
         print_usage ();
     end
   
     mx = max (lws, [], 1);
-    ws = exp (lws - repmat(mx, rows(lws), 1));
+    ws = exp (lws - repmat(mx, size(lws,1), 1));
     ws = sort(ws);
     c = cumsum(ws);
-    ss = (2.0*sum(c)./c(end,:) - 1.0)/rows(lws);
+    ss = (2.0*sum(c)./c(end,:) - 1.0)/size(lws,1);
 end

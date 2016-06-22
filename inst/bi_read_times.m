@@ -24,7 +24,7 @@ function times = bi_read_times (nc, name, coord, ts)
     if nargin < 2 || nargin > 4
         print_usage ();
     end
-    if !ischar (name)
+    if ~ischar (name)
         error ('name must be a string');
     end
     if nargin < 3

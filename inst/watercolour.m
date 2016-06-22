@@ -22,7 +22,7 @@ function c = watercolour (i)
     if (nargin > 1)
         print_usage ();
     end
-    if nargin == 1 && !isscalar(i)
+    if (nargin == 1 && ~isscalar(i))
         error ('i must be scalar');
     end
     
@@ -37,7 +37,7 @@ function c = watercolour (i)
     
     % select from palette
     if nargin == 1
-        c = palette(mod(i - 1, rows(palette)) + 1, :);
+        c = palette(mod(i - 1, size(palette,1)) + 1, :);
     else
         c = palette;
     end

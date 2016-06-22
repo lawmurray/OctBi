@@ -12,7 +12,7 @@
 %
 function Q = read_quantiles_kalman_filter (nc, name, coord, ps, ts, qs)
     % check arguments
-    if nargin != 6
+    if nargin ~= 6
         print_usage ();
     end
     

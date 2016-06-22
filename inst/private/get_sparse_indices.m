@@ -26,22 +26,22 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
     if nargin < 2 || nargin > 5
         print_usage ();
     end
-    if !ischar (name)
+    if ~ischar (name)
         error ('name must be a string');
     end
     if nargin < 3
         coord = [];
-    elseif !isempty (coord) && !isvector (coord)
+    elseif ~isempty (coord) && ~isvector (coord)
         error ('coord must be a vector');
     end
     if nargin < 4
         ps = [];
-    elseif !isempty (ps) && !isvector (ps)
+    elseif ~isempty (ps) && ~isvector (ps)
         error ('ps must be a vector');
     end
     if nargin < 5
         ts = [];
-    elseif !isempty (ts) && !isvector (ts)
+    elseif ~isempty (ts) && ~isvector (ts)
         error ('t must be a vector');
     end
     
@@ -59,9 +59,9 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
     tvar = get_time_var (nc, name);
     cvar = get_coord_var (nc, name);
     dense = isempty (cvar);
-    has_tdim = !isempty (tdim);
+    has_tdim = ~isempty (tdim);
     
-    if !dense
+    if ~dense
         if length (coord) > 0
             ndims = nc_var_num_dims (nc, name);
             if ndims == 1

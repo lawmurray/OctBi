@@ -13,7 +13,7 @@
 % @end deftypefn
 %
 function y = invgampdf (x, a, b)
-    if nargin != 3
+    if nargin ~= 3
         print_usage ();
     end
     

@@ -26,7 +26,7 @@ function c = fade (rgb, amount)
     if nargin < 2
         amount = 1.0;
     end
-    if length(rgb) != 3
+    if length(rgb) ~= 3
         error ('rgb must be three component RGB triplet');
     end
     

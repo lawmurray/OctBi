@@ -30,7 +30,7 @@ function X = bi_sparsify_var (infile, outfile, name, coords, ps, ts)
     end
     if nargin < 4
         coords = [];
-    elseif !isempty (coords) && !ismatrix (coords)
+    elseif ~isempty (coords) && ~ismatrix (coords)
         error ('coords must be a matrix');
     end
     if nargin < 5

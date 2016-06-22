@@ -15,12 +15,12 @@
 %
 function ss = ess (lws)
     % check arguments
-    if nargin != 1
+    if nargin ~= 1
         print_usage ();
     end
   
     mx = max (lws, [], 1);
-    ws = exp (lws - repmat(mx, rows(lws), 1));
+    ws = exp (lws - repmat(mx, size(lws,1), 1));
     num = sum (ws).^2;
     den = sum (ws.^2);
     ss = num./den;

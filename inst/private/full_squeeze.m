@@ -12,7 +12,7 @@
 % @end deftypefn
 %
 function X = full_squeeze (X)
-  if nargin != 1
+  if nargin ~= 1
     print_usage ();
   end
   X = squeeze (X);

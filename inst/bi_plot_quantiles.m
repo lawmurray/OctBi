@@ -32,25 +32,25 @@ function bi_plot_quantiles (file, name, coord, ps, ts, col, sty)
     if nargin < 2 || nargin > 7
         print_usage ();
     end
-    if !ischar (file)
+    if ~ischar (file)
         error ('file must be a string');
     end
-    if !ischar (name)
+    if ~ischar (name)
         error ('name must be a string');
     end
     if nargin < 3
         coord = [];
-    elseif !isempty (coord) && !isvector (coord)
+    elseif ~isempty (coord) && ~isvector (coord)
         error ('coord must be a vector');
     end
     if nargin < 4
         ps = [];
-    elseif !isempty (ps) && !isvector (ps)
+    elseif ~isempty (ps) && ~isvector (ps)
         error ('ps must be a vector');
     end
     if nargin < 5
         ts = [];
-    elseif !isempty (ts) && !isvector (ts)
+    elseif ~isempty (ts) && ~isvector (ts)
         error ('ts must be a vector');
     end
     if nargin < 6
@@ -68,7 +68,7 @@ function bi_plot_quantiles (file, name, coord, ps, ts, col, sty)
     % plot
     style = get_style (col, sty, file, name);
     ish = ishold;
-    if !ish
+    if ~ish
         cla % patch doesn't clear otherwise
     end
     

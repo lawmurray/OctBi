@@ -14,7 +14,7 @@
 % @end deftypefn
 %
 function options = struct2options (s)
-    if nargin != 1
+    if nargin ~= 1
         print_usage ();
     end
 

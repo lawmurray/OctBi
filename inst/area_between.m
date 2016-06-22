@@ -34,13 +34,13 @@ function area_between (x, y1, y2, c, fd, alpha)
     if nargin < 6
         alpha = 0.5;
     end
-    if !isvector(x)
+    if ~isvector(x)
         error ('x must be vector');
     end
-    if !isvector(y1)
+    if ~isvector(y1)
         error ('y1 must be vector');
     end
-    if !isvector(y2)
+    if ~isvector(y2)
         error ('y2 must be vector');
     end
     

@@ -26,7 +26,7 @@ function X = bi_read_var (nc, name, coord, ps, ts)
     if nargin < 2 || nargin > 5
         print_usage ();
     end
-    if !ischar (name)
+    if ~ischar (name)
         error ('name must be a string');
     end
     if nargin < 3

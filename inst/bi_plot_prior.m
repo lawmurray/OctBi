@@ -21,7 +21,7 @@
 %
 function bi_plot_prior (x, priorpdf, priorparams)
     % check arguments
-    if nargin != 3
+    if nargin ~= 3
         print_usage ();
     end
     

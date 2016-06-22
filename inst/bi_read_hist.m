@@ -32,22 +32,22 @@ function [xs, ns] = bi_read_hist (nc, name, coord, ps, t, bins, threshold)
     if nargin < 2 || nargin > 7
         print_usage ();
     end
-    if !ischar (name)
+    if ~ischar (name)
         error ('name must be a string');
     end
     if nargin < 3
         coord = [];
-    elseif !isempty (coord) && !isvector (coord)
+    elseif ~isempty (coord) && ~isvector (coord)
         error ('coord must be a vector');
     end
     if nargin < 4
         ps = [];
-    elseif !isempty (ps) && !isvector (ps)
+    elseif ~isempty (ps) && ~isvector (ps)
         error ('ps must be a vector');
     end
     if nargin < 5
         t = [];
-    elseif !isempty (t) && !isscalar (t)
+    elseif ~isempty (t) && ~isscalar (t)
         error ('t must be a scalar');
     end
     if nargin < 6

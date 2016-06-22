@@ -17,7 +17,7 @@
 %
 function check = nc_has_var (nc, name)
     % check arguments
-    if nargin != 2
+    if nargin ~= 2
         print_usage ();
     end
 

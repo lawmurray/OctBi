@@ -30,10 +30,10 @@ function style = get_style (col, sty, file, name)
     if (isempty (col) || isempty(sty)) && (isempty (file) || isempty (name))
         error ('must specify at least either col and sty, or file and name');
     end
-    if !isempty (file) && !ischar (file)
+    if ~isempty (file) && ~ischar (file)
         error ('file must be a string');
     end
-    if !isempty (name) && !ischar (name)
+    if ~isempty (name) && ~ischar (name)
         error ('name must be a string');
     end
     
@@ -45,7 +45,7 @@ function style = get_style (col, sty, file, name)
     style.color = gr;
     
     % schema defaults
-    if !isempty (file) && !isempty (name) && isempty (col) && isempty (sty)
+    if ~isempty (file) && ~isempty (name) && isempty (col) && isempty (sty)
         try
             schema = ncreadatt (file, '/', 'libbi_schema');
         catch
@@ -86,14 +86,14 @@ function style = get_style (col, sty, file, name)
         end
     end
     
-    if !isempty (col)
+    if ~isempty (col)
         if col == 0
             style.color = gr;
         else
             style.color = watercolour (col);
         end
     end
-    if !isempty (sty)
+    if ~isempty (sty)
         if sty == 0
             style.linestyle = 'none';
         else

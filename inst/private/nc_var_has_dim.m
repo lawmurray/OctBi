@@ -20,7 +20,7 @@
 %
 function check = nc_var_has_dim (nc, name, dim)
     % check arguments
-    if nargin != 3
+    if nargin ~= 3
         print_usage ();
     end
     

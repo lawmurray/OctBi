@@ -12,7 +12,7 @@
 %
 function [xs, ns] = read_hist_kalman_filter (nc, name, coord, ps, t, bins, threshold)
     % check arguments
-    if nargin != 7
+    if nargin ~= 7
         print_usage ();
     end
     

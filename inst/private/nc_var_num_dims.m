@@ -16,7 +16,7 @@
 % @end deftypefn
 %
 function n = nc_var_num_dims (nc, name)
-    if nargin != 2
+    if nargin ~= 2
         print_usage ();
     end
 

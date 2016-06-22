@@ -22,7 +22,7 @@ function s = linestyle (i)
     if nargin > 1
         print_usage ();
     end
-    if nargin == 1 && !isscalar(i)
+    if nargin == 1 && ~isscalar(i)
         error ('i must be scalar');
     end
     

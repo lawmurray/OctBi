@@ -32,15 +32,15 @@ function bi_image_cor (file, names, coords, ps, t)
     end
     if nargin < 4
         ps = [];
-    elseif !isempty (ps) && !isvector (ps)
+    elseif ~isempty (ps) && ~isvector (ps)
         error ('ps must be a vector');
     end
     if nargin < 5
        t = [];
-    elseif !isempty (t) && !isscalar (t)
+    elseif ~isempty (t) && ~isscalar (t)
         error ('t must be a scalar');
     end
-    if !(length (coords) == 0 || length(coords) == length(names))
+    if ~(length (coords) == 0 || length(coords) == length(names))
         error ('Length of names and coords must match');
     end
     

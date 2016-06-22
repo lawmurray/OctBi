@@ -16,12 +16,12 @@
 % @end deftypefn
 %
 function tvar = get_time_var (nc, name)
-    if nargin != 2
+    if nargin ~= 2
         print_usage ();
     end
 
     [s e te m txt mn] = regexp (name, '(?<prefix>.*?)_?obs$');
-    if !isempty (mn.prefix)
+    if ~isempty (mn.prefix)
         prefix = mn.prefix;
     else
         prefix = '';

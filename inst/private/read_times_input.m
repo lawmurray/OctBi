@@ -11,7 +11,7 @@
 % @end deftypefn
 %
 function times = read_times_input (nc, name, coord, ts)
-    if nargin != 4
+    if nargin ~= 4
         print_usage ();
     end
 

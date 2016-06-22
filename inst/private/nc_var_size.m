@@ -16,7 +16,7 @@
 % @end deftypefn
 %
 function sz = nc_var_size (nc, name)
-    if nargin != 2
+    if nargin ~= 2
         print_usage ();
     end
 

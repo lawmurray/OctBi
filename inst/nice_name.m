@@ -48,7 +48,7 @@ function nice = nice_name (name, coord)
     end
     for i = 1:length (coord)
         nice = strcat (nice, num2str (coord(i)));
-        if i != length (coord)
+        if i ~= length (coord)
             nice = strcat (nice, ',');
         end
     end

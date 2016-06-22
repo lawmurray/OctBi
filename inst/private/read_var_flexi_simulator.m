@@ -15,28 +15,28 @@ function X = read_var_flexi_simulator (nc, name, coord, ps, ts)
     if nargin < 2 || nargin > 5
         print_usage ();
     end
-    if !ischar (name)
+    if ~ischar (name)
         error ('name must be a string');
     end
     if nargin < 3
         coord = [];
-    elseif !isempty (coord) && !isvector (coord)
+    elseif ~isempty (coord) && ~isvector (coord)
         error ('coord must be a vector');
     end
     if nargin < 4
         ps = [];
-    elseif !isempty (ps) && !isvector (ps)
+    elseif ~isempty (ps) && ~isvector (ps)
         error ('ps must be a vector');
     end
     if nargin < 5
         ts = [];
-    elseif !isempty (ts) && !isvector (ts)
+    elseif ~isempty (ts) && ~isvector (ts)
         error ('ts must be a scalar');
     end
     
     starts = nc{'start'}(:);
     lens = nc{'len'}(:);
-    if !isempty (ts)
+    if ~isempty (ts)
         starts = starts(ts);
         lens = lens(ts);
     end

@@ -27,25 +27,25 @@ function bi_image_density (file, name, coord, ps, ts, res)
     if nargin < 2 || nargin > 6
         print_usage ();
     end
-    if !ischar (file)
+    if ~ischar (file)
         error ('file must be a string');
     end
-    if !ischar (name)
+    if ~ischar (name)
         error ('name must be a string');
     end
     if nargin < 3
         coord = [];
-    elseif !isempty (coord) && !isvector (coord)
+    elseif ~isempty (coord) && ~isvector (coord)
         error ('coord must be a vector');
     end
     if nargin < 4
         ps = [];
-    elseif !isempty (ps) && !isvector (ps)
+    elseif ~isempty (ps) && ~isvector (ps)
         error ('ps must be a vector');
     end
     if nargin < 5
         ts = [];
-    elseif !isempty (ts) && !isvector (ts)
+    elseif ~isempty (ts) && ~isvector (ts)
         error ('ts must be a vector');
     end
     if nargin < 6
@@ -56,7 +56,7 @@ function bi_image_density (file, name, coord, ps, ts, res)
     times = bi_read_times (file, name, coord, ts);
     X = bi_read_paths (file, name, coord, ps, ts);
     if isempty(res)
-        res = floor(sqrt(columns(X)));
+        res = floor(sqrt(size(X,2)));
     end
     
     % data extents
@@ -67,7 +67,7 @@ function bi_image_density (file, name, coord, ps, ts, res)
     % plot
     nn = histc(X, xs, 2)';
     NN = max(nn, [], 1);
-    nn = nn./repmat(NN, rows(nn), 1);
+    nn = nn./repmat(NN, size(nn,1), 1);
     imagesc(times(:), xs(:), nn);
     set(gca(), 'ydir', 'normal');
 end
