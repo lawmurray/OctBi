@@ -20,5 +20,6 @@ function n = nc_var_num_dims (nc, name)
         print_usage ();
     end
 
-    n = length (ncinfo (nc, name).Dimensions);
+    info = ncinfo(nc, name);
+    n = length(info.Dimensions);
 end

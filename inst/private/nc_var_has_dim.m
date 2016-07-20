@@ -25,7 +25,8 @@ function check = nc_var_has_dim (nc, name, dim)
     end
     
     check = 0;
-    dims = ncinfo (nc, name).Dimensions;
+    info = ncinfo(nc, name);
+    dims = info.Dimensions;
     for i = 1:length (dims)
         if strcmp (dim, dims(i).Name)
             check = 1;

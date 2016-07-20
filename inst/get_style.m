@@ -38,7 +38,8 @@ function style = get_style (col, sty, file, name)
     end
     
     % gray colour
-    gr = gray()(40,:);
+    gr = gray();
+    gr = gr(40,:);
     
     % global defaults
     style.linewidth = 2;
@@ -54,7 +55,7 @@ function style = get_style (col, sty, file, name)
         switch schema
         case {'Simulator'}
             if nc_has_dim (file, 'np') && nc_dim_size (file, 'np') == 1
-	        % treat as simulated obs file
+                % treat as simulated obs file
                 style.linestyle = 'none';
                 style.marker = 'o';
                 style.markersize = 2;

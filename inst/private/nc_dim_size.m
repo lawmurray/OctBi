@@ -20,7 +20,8 @@ function sz = nc_dim_size (nc, name)
         print_usage ();
     end
 
-    dims = ncinfo (nc).Dimensions;
+    info = ncinfo (nc);
+    dims = info.Dimensions;
     for i = 1:length (dims)
         if strcmp (name, dims(i).Name)
             sz = dims(i).Length;
