@@ -66,5 +66,6 @@ function bi_plot_paths (file, name, coord, ps, ts, col, sty)
     % plot
     style = get_style (col, sty, file, name);
     style.linewidth = 1;
-    plot (times, X, struct2options (style){:});
+    opts = struct2options(style);
+    plot (times, X, opts{:});
 end

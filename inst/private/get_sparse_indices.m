@@ -100,8 +100,9 @@ function args = get_sparse_indices (nc, name, coord, ps, ts)
             end
             if isempty (ts)
                 args{length (args) + 1} = find (mask);
-            else
-                args{length (args) + 1} = find (mask)(ts);
+	    else
+		is = find(mask);
+                args{length (args) + 1} = is(ts);
             end
         end
     end

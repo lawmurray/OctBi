@@ -74,7 +74,8 @@ function bi_plot_quantiles (file, name, coord, ps, ts, col, sty)
     
     area_between (times, Q(:,1), Q(:,3), style.color, 1.0, 0.3);
     hold on
-    plot (times, Q(:,2), struct2options (style){:});
+    opts = struct2options(style);
+    plot (times, Q(:,2), opts{:});
     if ish
         hold on
     else

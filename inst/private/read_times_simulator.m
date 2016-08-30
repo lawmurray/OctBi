@@ -18,5 +18,6 @@ function times = read_times_simulator (nc, name, coord, ts)
     if isempty (ts)
         ts = [1:T];
     end
-    times = ncread (nc, 'time')(ts);
+    times = ncread (nc, 'time');
+    times = times(ts);
 end

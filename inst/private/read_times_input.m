@@ -17,5 +17,6 @@ function times = read_times_input (nc, name, coord, ts)
 
     tvar = get_time_var (nc, name);
     args = get_sparse_indices (nc, name, coord, [], ts);
-    times = ncread(nc, tvar)(args{end:-1:1});
+    times = ncread(nc, tvar);
+    times = times(args{end:-1:1});
 end
