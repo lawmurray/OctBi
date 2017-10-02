@@ -19,9 +19,9 @@ function cvar = get_coord_var (nc, name)
     if nargin ~= 2
         print_usage ();
     end
-    
+
     [s e te m txt mn] = regexp (name, '(?<prefix>.*?)_?obs$');
-    if ~isempty (mn.prefix)
+    if ~isempty (s)
         prefix = mn.prefix;
     else
         prefix = '';
@@ -33,7 +33,7 @@ function cvar = get_coord_var (nc, name)
         (sprintf ('coord%s', prefix));
         (sprintf ('coord'));
         };
-        
+
     cvar = [];
     for i = 1:length (cvars)
         nm = cvars{i};

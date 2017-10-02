@@ -59,23 +59,27 @@ function bi_plot_quantiles (file, name, coord, ps, ts, col, sty)
     if nargin < 7
         sty = [];
     end
-    
+
     % data
     times = bi_read_times (file, name, coord, ts);
-    qs = [0.025 0.5 0.975]';
+    qs = [0.025 0.25 0.5 0.75 0.975]';
     Q = bi_read_quantiles (file, name, coord, ps, ts, qs);
-    
+
     % plot
     style = get_style (col, sty, file, name);
     ish = ishold;
     if ~ish
         cla % patch doesn't clear otherwise
     end
-    
-    area_between (times, Q(:,1), Q(:,3), style.color, 1.0, 0.3);
-    hold on
+    nquantiles = size(Q,2);
+    for i = 1:floor(nquantiles/2)
+      area_between (times, Q(:,i), Q(:,nquantiles - i + 1), style.color, 1.0, 0.3);
+      hold on
+    end
     opts = struct2options(style);
-    plot (times, Q(:,2), opts{:});
+    if nquantiles/2 > floor(nquantiles/2)
+      plot (times, Q(:,floor(nquantiles/2) + 1), opts{:});
+    end
     if ish
         hold on
     else

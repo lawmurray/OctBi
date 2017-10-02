@@ -36,15 +36,15 @@ function style = get_style (col, sty, file, name)
     if ~isempty (name) && ~ischar (name)
         error ('name must be a string');
     end
-    
+
     % gray colour
     gr = gray();
     gr = gr(40,:);
-    
+
     % global defaults
     style.linewidth = 2;
     style.color = gr;
-    
+
     % schema defaults
     if ~isempty (file) && ~isempty (name) && isempty (col) && isempty (sty)
         try
@@ -81,12 +81,12 @@ function style = get_style (col, sty, file, name)
             % probably an input file, assume obs
             style.linestyle = 'none';
             style.marker = 'o';
-            style.markersize = 2;
+            style.markersize = 6;
             style.markerfacecolor = 'w';
             style.markeredgecolor = 'k';
         end
     end
-    
+
     if ~isempty (col)
         if col == 0
             style.color = gr;

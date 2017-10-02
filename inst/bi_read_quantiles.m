@@ -19,7 +19,7 @@
 %
 % @item @var{ts} (optional) Time indices.
 %
-% @item @var{qs} (optional) Quantiles. Defaults to [0.025 0.5 0.975].
+% @item @var{qs} (optional) Quantiles. Defaults to [0.025 0.25 0.5 0.75 0.975].
 % @end itemize
 % @end deftypefn
 %
@@ -51,7 +51,7 @@ function Q = bi_read_quantiles (nc, name, coord, ps, ts, qs)
     elseif ~isempty (qs) && ~isvector (qs)
         error ('qs must be a vector');
     end
-    
+
     % default sizes
     if nc_has_dim (nc, 'nr')
         T = nc_dim_size (nc, 'nr');
@@ -61,14 +61,14 @@ function Q = bi_read_quantiles (nc, name, coord, ps, ts, qs)
     if isempty (ts)
         ts = [1:T];
     end
-    
+
     if isempty (qs)
-        qs = [0.025 0.5 0.975]';
+        qs = [0.025 0.25 0.5 0.75 0.975]';
     end
-    
+
     % defer to implementation for schema
     try
-        schema = ncreadatt (file, '/', 'libbi_schema');
+        schema = ncreadatt (nc, '/', 'libbi_schema');
     catch
         schema = '';
     end

@@ -43,13 +43,13 @@ function area_between (x, y1, y2, c, fd, alpha)
     if ~isvector(y2)
         error ('y2 must be vector');
     end
-    
+
     % plot
     a = [flipud(x(:)); x(:); x(end)];
     b = [flipud(y1(:)); y2(:); y1(end) ];
     % ^ flipud orders points clockwise so that correct faces are shaded
-        
+
     bg = fade(c, fd);
-    patch(a, b, bg', 'linewidth', 0.5, 'edgecolor', c, 'edgealpha', 0, ...
+    patch(a, b, bg, 'linewidth', 0.5, 'edgecolor', c, 'edgealpha', 0, ...
         'facealpha', alpha);
 end

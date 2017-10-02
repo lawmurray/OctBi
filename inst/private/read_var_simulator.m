@@ -33,17 +33,17 @@ function X = read_var_simulator (nc, name, coord, ps, ts)
     elseif ~isempty (ts) && ~isvector (ts)
         error ('ts must be a scalar');
     end
-    
+
     % check dimensions
     if nc_var_has_dim (nc, name, 'np')
         P = nc_dim_size (nc, 'np');
     else
         P = 1;
-    end    
+    end
     if isempty (ps)
         ps = [1:P];
     end
-    
+
     if nc_var_has_dim (nc, name, 'nr')
         T = nc_dim_size (nc, 'nr');
     else
@@ -52,7 +52,7 @@ function X = read_var_simulator (nc, name, coord, ps, ts)
     if isempty (ts)
         ts = [1:T];
     end
-    
+
     % read
     args = {};
     if nc_var_has_dim (nc, name, 'nr')

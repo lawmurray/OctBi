@@ -21,7 +21,7 @@ function tdim = get_time_dim (nc, name)
     end
 
     [s e te m txt mn] = regexp (name, '(?<prefix>.*?)_?obs$');
-    if ~isempty (mn.prefix)
+    if ~isempty (s)
         prefix = mn.prefix;
     else
         prefix = '';
