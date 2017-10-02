@@ -15,7 +15,7 @@ function Q = read_quantiles_particle_filter (nc, name, coord, ps, ts, qs)
     if nargin ~= 6
         print_usage ();
     end
-    
+
     Q = zeros (length (ts), length (qs));
     for t = 1:length (ts)
         x = bi_read_var (nc, name, coord, ps, ts(t));
@@ -23,17 +23,34 @@ function Q = read_quantiles_particle_filter (nc, name, coord, ps, ts, qs)
         lw = bi_read_var (nc, 'logweight', [], ps, ts(t));
         lw = lw(is);
         w = exp (lw - max (lw));
-        W = cumsum (w);
-        W = W/W(end); % normalise
-        
+
+        % consolidate repeated values
+        y = [];
+        v = [];
+        j = 1;
+        y(j) = x(j);
+        v(j) = w(j);
+        for i = 2:length(x)
+          if x(i) == y(j)
+            v(j) = v(j) + w(i);
+          else
+            j = j + 1;
+            y(j) = x(i);
+            v(j) = w(i);
+          end
+        end
+        V = cumsum (v);
+        V = V/V(end); % normalise
+
         for q = 1:length (qs)
-            is = find (W <= qs(q));
-            if length (is) > 0
-                k = is(end);
+            k = find (V > qs(q), 1);
+            if k == 1
+              Q(t,q) = y(k);
             else
-                k = 1;
+              % linear interpolation
+              a = (qs(q) - V(k-1))/(V(k) - V(k-1));
+              Q(t,q) = a*y(k-1) + (1.0 - a)*y(k);
             end
-            Q(t,q) = x(k);
         end
     end
 end
